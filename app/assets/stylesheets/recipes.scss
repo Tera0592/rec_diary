@@ -1,0 +1,129 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
+/* ヘッダー */
+header {
+  height: 50px;
+  background-color: #f0f0f0;
+  padding: 10px 0 ;
+  display: flex;
+}
+
+.heading{
+  width: 30%;
+  margin-left: 30px;
+}
+
+
+.search-form {
+  width: 40%;
+  padding: 20px;
+}
+
+.search-box {
+  margin: 0;
+  padding: 0;
+  border: 1px solid;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar {
+  width: 30%;
+  padding: 20px;
+}
+
+.nav-lists {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li{
+  list-style: none;
+}
+
+/* wa-contentクラスからchina-contentクラスまでの要素の親要素 */
+.recipe-contents {
+  background-color: white;
+}
+
+/* 和食レシピ */
+.wa-content{
+  height: 450px;
+  margin: 0 160px;
+}
+
+.heading-name{
+  text-align: center;
+  border-bottom: 1px solid red;
+  width: 200px;
+  margin: 40px auto;
+}
+.wa-recipe{
+  display: flex;
+  background-color: white;
+  justify-content: space-around;
+  border: 1px solid;
+  margin: 10px 20px;
+}
+
+.recipe-image {
+  height: 300px;
+  width: 200px;
+}
+
+.recipe-name {
+  font-size: 16px;
+  text-align: center;
+}
+
+/* 洋食レシピ */
+.you-content{
+  height: 450px;
+  margin: 0 160px;
+}
+
+.you-recipe{
+  display: flex;
+  background-color: white;
+  justify-content: space-around;
+  border: 1px solid;
+  margin: 10px 20px;
+}
+
+/* 中華料理レシピ */
+.china-content{
+  height: 450px;
+  margin: 0 160px;
+}
+
+.china-recipe{
+  display: flex;
+  background-color: white;
+  justify-content: space-around;
+  border: 1px solid;
+  margin: 10px 20px;
+}
+
+/* フッター */
+footer {
+  height: 50px;
+  background-color: #f0f0f0;
+  text-align: center;
+  color: gray;
+}
