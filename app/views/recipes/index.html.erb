@@ -1,2 +1,84 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<header>
+      <div class="heading">
+        <h1 class="title">Recipe DIARY</h1>
+      </div>
+      <div class="search-form">
+        <ul class="search-box">
+          <li>検索したい料理名入力欄</li>
+          <li>検索</li>
+        </ul>
+      </div>
+      <div class="navbar">
+        <ul class="nav-lists">
+          <li>新規登録</li>
+          <li>ログイン</li>
+        </ul>
+      </div>
+    </header>
+    <!-- レシピ一覧 -->
+    <div class="recipe-contents">
+      <h2 class="title">レシピ一覧</h2>
+      <!-- 和食のレシピを表示する -->
+      <div class="wa-content">
+        <h2 class="heading-name">和食</h2>
+        <ul class="wa-recipe">
+          <li class="recipe">
+            <%= image_tag "bousai_nikujaga.png", class:"recipe-image" %>
+            <h4 class="recipe-name">肉じゃが</h4>
+          </li>
+          <li class="recipe">
+            <%= image_tag "bousai_nikujaga.png", class:"recipe-image" %>
+            <h4 class="recipe-name">肉じゃが</h4>
+          </li>
+          <li class="recipe">
+            <%= image_tag "bousai_nikujaga.png", class:"recipe-image" %>
+            <h4 class="recipe-name">肉じゃが</h4>
+          </li>
+        </ul>
+      </div>
+      <!-- 和食のレシピを表示する -->
+
+      <!-- 洋食のレシピを表示する -->
+      <div class="you-content">
+        <h2 class="heading-name">洋食</h2>
+        <ul class="you-recipe">
+          <li class="recipe">
+            <%= image_tag "food_omurice.png", class:"recipe-image" %>
+            <h4 class="recipe-name">オムライス</h4>
+          </li>
+          <li class="recipe">
+            <%= image_tag "food_omurice.png", class:"recipe-image" %>
+            <h4 class="recipe-name">オムライス</h4>
+          </li>
+          <li class="recipe">
+            <%= image_tag "food_omurice.png", class:"recipe-image" %>
+            <h4 class="recipe-name">オムライス</h4>
+          </li>
+        </ul>
+      </div>
+      <!-- 洋食のレシピを表示する -->
+
+      <!-- 中華料理のレシピを表示する -->
+      <div class="china-content">
+        <h2 class="heading-name">中華料理</h2>
+        <ul class="china-recipe">
+          <li class="recipe">
+            <%= image_tag "food_gyouza.png", class:"recipe-image" %>
+            <h4 class="recipe-name">餃子</h4>
+          </li>
+          <li class="recipe">
+            <%= image_tag "food_gyouza.png", class:"recipe-image" %>
+            <h4 class="recipe-name">餃子</h4>
+          </li>
+          <li class="recipe">
+            <%= image_tag "food_gyouza.png", class:"recipe-image" %>
+            <h4 class="recipe-name">餃子</h4>
+          </li>
+        </ul>
+      </div>
+      <!-- 中華料理のレシピを表示する -->
+    </div>
+    <!-- レシピ一覧 -->
+    <footer>
+      <p> Recipe DIARY  </p>
+    </footer>
