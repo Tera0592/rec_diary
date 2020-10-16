@@ -1,0 +1,42 @@
+/* ヘッダー */
+header {
+  height: 50px;
+  background-color: #f0f0f0;
+  padding: 10px 0 ;
+  display: flex;
+}
+
+.heading{
+  width: 30%;
+  margin-left: 30px;
+}
+
+
+.search-form {
+  width: 40%;
+  padding: 20px;
+}
+
+.search-box {
+  margin: 0;
+  padding: 0;
+  border: 1px solid;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar {
+  width: 30%;
+  padding: 20px;
+}
+
+.nav-lists {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+li{
+  list-style: none;
+}
