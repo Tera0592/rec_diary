@@ -6,11 +6,15 @@ header {
   display: flex;
 }
 
-.heading{
+.heading {
   width: 30%;
   margin-left: 30px;
 }
 
+.title {
+  text-decoration: none;
+  color: #333333;
+}
 
 .search-form {
   width: 40%;
@@ -48,6 +52,10 @@ li{
   font-weight: bold;
 }
 
+.post-recipe:hover {
+  text-decoration: underline;
+}
+
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
@@ -55,20 +63,39 @@ li{
   font-weight: bold;
 }
 
+.user-nickname:hover {
+  text-decoration: underline;
+}
 
 .logout {
   text-decoration: none;
+  margin-right: 3vw;
   color: #333333;
+  font-weight: bold;
+}
+
+.logout:hover {
+  text-decoration: underline;
 }
 
 .login {
   text-decoration: none;
-  line-height: 32px;
   margin-right: 3vw;
   color: #333333;
+  font-weight: bold;
+}
+
+.login:hover {
+  text-decoration: underline;
 }
 
 .sign-up {
   text-decoration: none;
+  margin-right: 3vw;
   color: #333333;
+  font-weight: bold;
+}
+
+.sign-up:hover {
+  text-decoration: underline;
 }
