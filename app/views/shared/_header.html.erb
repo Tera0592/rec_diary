@@ -2,12 +2,12 @@
   <div class="heading">
     <h1><%= link_to 'Recipe DIARY', root_path, class: "title" %></h1>
   </div>
-  <div class="search-form">
-    <ul class="search-box">
-      <li>検索したい料理名入力欄</li>
-      <li>検索</li>
-    </ul>
-  </div>
+  <form class="search-form" action="#">
+    <input class='input-box' placeholder='キーワードから探す'>
+    <button class="search-button">
+    <%= image_tag "search-512.png", class:"search-icon" %>
+    </button>
+  </form>
   <div class="navbar">
     <ul class="nav-lists">
       <% if user_signed_in? %>
