@@ -4,6 +4,7 @@ ja:
       user: ユーザー
     attributes:
       user:
-        nickname: ニックネーム
-        email: メールアドレス
-        password: パスワード
+        nickname:              ニックネーム
+        email:                 メールアドレス
+        password:              パスワード
+        password_confirmation: 確認用パスワード
