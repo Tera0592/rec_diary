@@ -14,6 +14,46 @@ ul,li {
   margin: 0;
 }
 
+/* Recipe Diaryへようこそ */
+
+.title-contents {
+  position: relative;
+  color: white;
+}
+
+.top-image {
+  width: 100%;
+  height: 60%;
+}
+
+.service-title {
+  position: absolute;
+  font-size: 50px;
+  top: 20%;
+  left: 2%;
+}
+
+.service-explain-a {
+  position: absolute;
+  font-size: 20px;
+  top: 40%;
+  left: 2%;
+}
+
+.service-explain-b {
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 2%;
+}
+
+.service-explain-c {
+  position: absolute;
+  font-size: 20px;
+  top: 60%;
+  left: 2%;
+}
+
 /* wa-contentクラスからchina-contentクラスまでの要素の親要素 */
 .recipe-contents {
   background-color: white;
