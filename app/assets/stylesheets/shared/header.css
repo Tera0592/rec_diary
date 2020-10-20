@@ -61,6 +61,17 @@ li{
   list-style: none;
 }
 
+.all-diary {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+.all-diary:hover {
+  text-decoration: underline;
+}
+
 .post-recipe {
   text-decoration: none;
   margin-right: 3vw;
