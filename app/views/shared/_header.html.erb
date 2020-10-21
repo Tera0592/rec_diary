@@ -12,7 +12,7 @@
     <ul class="nav-lists">
       <% if user_signed_in? %>
       <li><%= link_to '日記一覧', "#" , class: "all-diary" %></li>
-      <li><%= link_to 'レシピを投稿する', "#" , class: "post-recipe" %></li>
+      <li><%= link_to 'レシピを投稿する', "recipes/new" , class: "post-recipe" %></li>
       <li><%= link_to current_user.nickname, "#" , class: "user-nickname" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
