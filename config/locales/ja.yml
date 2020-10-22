@@ -8,3 +8,15 @@ ja:
         email:                 メールアドレス
         password:              パスワード
         password_confirmation: 確認用パスワード
+    
+    models:
+      recipe: レシピ
+    attributes:
+      recipe:
+        name:              料理名
+        image:             料理の写真
+        genre:             ジャンル
+        genre_id:          ジャンル
+        food:              材料
+        seasoning:         調味料
+        procedure:         作り方
