@@ -15,7 +15,6 @@ ul,li {
 }
 
 /* Recipe Diaryへようこそ */
-
 .title-contents {
   position: relative;
   color: white;
@@ -54,15 +53,14 @@ ul,li {
   left: 2%;
 }
 
-/* wa-contentクラスからchina-contentクラスまでの要素の親要素 */
+/* レシピ一覧 */
 .recipe-contents {
   background-color: white;
 }
 
-/* 和食レシピ */
-.wa-content{
+.recipe-content{
   height: 450px;
-  margin: 0 160px;
+  margin: 0 50px;
 }
 
 .heading-name{
@@ -71,48 +69,20 @@ ul,li {
   width: 200px;
   margin: 40px auto;
 }
-.wa-recipe{
+.all-recipe{
   display: flex;
   background-color: white;
   justify-content: space-around;
-  border: 1px solid;
-  margin: 10px 20px;
+  margin: 10px 10px;
 }
 
 .recipe-image {
-  height: 300px;
-  width: 200px;
+  width: 33vh;
+  height: 33vh;
 }
 
 .recipe-name {
-  font-size: 16px;
+  font-size: 2.5vh;
   text-align: center;
 }
 
-/* 洋食レシピ */
-.you-content{
-  height: 450px;
-  margin: 0 160px;
-}
-
-.you-recipe{
-  display: flex;
-  background-color: white;
-  justify-content: space-around;
-  border: 1px solid;
-  margin: 10px 20px;
-}
-
-/* 中華料理レシピ */
-.china-content{
-  height: 450px;
-  margin: 0 160px;
-}
-
-.china-recipe{
-  display: flex;
-  background-color: white;
-  justify-content: space-around;
-  border: 1px solid;
-  margin: 10px 20px;
-}

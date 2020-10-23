@@ -20,66 +20,47 @@
 
 <!-- レシピ一覧 -->
 <div class="recipe-contents">
-  <h2 class="title">レシピ一覧</h2>
-  <!-- 和食のレシピを表示する -->
-  <div class="wa-content">
-    <h2 class="heading-name">和食</h2>
-    <ul class="wa-recipe">
+  <div class="recipe-content">
+    <h2 class="heading-name">レシピ一覧</h2>
+    <!-- 投稿されたレシピがある場合、中身を全てを展開する -->
+    <% if @recipe.present? %>
+    <% @recipe.each do |recipe| %>
+    <ul class="all-recipe">
       <li class="recipe">
-        <%= image_tag "bousai_nikujaga.png", class:"recipe-image" %>
-        <h4 class="recipe-name">肉じゃが</h4>
-      </li>
-      <li class="recipe">
-        <%= image_tag "bousai_nikujaga.png", class:"recipe-image" %>
-        <h4 class="recipe-name">肉じゃが</h4>
-      </li>
-      <li class="recipe">
-        <%= image_tag "bousai_nikujaga.png", class:"recipe-image" %>
-        <h4 class="recipe-name">肉じゃが</h4>
+        <%= image_tag recipe.image, class:"recipe-image" %>
+        <h4 class="recipe-name">
+          <%= recipe.name %>
+        </h4>
       </li>
     </ul>
+    <% end %>
+    <!-- 投稿されたレシピがある場合、中身を全てを展開する -->
+    <% else %>
+    <!-- 投稿されたレシピがない場合のダミー -->
+    <ul class="all-recipe">
+      <li class="recipe">
+        <%= image_tag "bousai_nikujaga.png", class:"recipe-image" %>
+        <h4 class="recipe-name">
+          肉じゃが
+        </h4>
+      </li>
+      <li class="recipe">
+        <%= image_tag "food_omurice.png", class:"recipe-image" %>
+        <h4 class="recipe-name">
+          オムライス
+        </h4>
+      </li>
+      <li class="recipe">
+        <%= image_tag "food_gyouza.png", class:"recipe-image" %>
+        <h4 class="recipe-name">
+          餃子
+        </h4>
+      </li>
+    </ul>
+    <!-- 投稿されたレシピがない場合のダミー -->
+    <% end %>
   </div>
-  <!-- 和食のレシピを表示する -->
 
-  <!-- 洋食のレシピを表示する -->
-  <div class="you-content">
-    <h2 class="heading-name">洋食</h2>
-    <ul class="you-recipe">
-      <li class="recipe">
-        <%= image_tag "food_omurice.png", class:"recipe-image" %>
-        <h4 class="recipe-name">オムライス</h4>
-      </li>
-      <li class="recipe">
-        <%= image_tag "food_omurice.png", class:"recipe-image" %>
-        <h4 class="recipe-name">オムライス</h4>
-      </li>
-      <li class="recipe">
-        <%= image_tag "food_omurice.png", class:"recipe-image" %>
-        <h4 class="recipe-name">オムライス</h4>
-      </li>
-    </ul>
-  </div>
-  <!-- 洋食のレシピを表示する -->
-
-  <!-- 中華料理のレシピを表示する -->
-  <div class="china-content">
-    <h2 class="heading-name">中華料理</h2>
-    <ul class="china-recipe">
-      <li class="recipe">
-        <%= image_tag "food_gyouza.png", class:"recipe-image" %>
-        <h4 class="recipe-name">餃子</h4>
-      </li>
-      <li class="recipe">
-        <%= image_tag "food_gyouza.png", class:"recipe-image" %>
-        <h4 class="recipe-name">餃子</h4>
-      </li>
-      <li class="recipe">
-        <%= image_tag "food_gyouza.png", class:"recipe-image" %>
-        <h4 class="recipe-name">餃子</h4>
-      </li>
-    </ul>
-  </div>
-  <!-- 中華料理のレシピを表示する -->
 </div>
 <!-- レシピ一覧 -->
 <%= render "shared/footer" %>
