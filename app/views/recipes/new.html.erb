@@ -7,14 +7,15 @@
     <h2 class="recipes-post-title">料理のレシピを書く</h2>
     
     <%= form_with model: @recipe, url: recipes_path, method: :post, local: true do |f| %>
-
-    <%= render 'shared/error_messages', model: f.object %>
     
     <%# 料理の写真 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         料理の写真
         <span class="indispensable">必須</span>
+        <% if @recipe.errors.include?(:image) %>
+        <p style="color: red;"><%= @recipe.errors.full_messages_for(:image).first %>
+        <% end %>
       </div>
       <div class="click-upload">
         <p>
@@ -30,6 +31,9 @@
       <div class="weight-bold-text">
         料理名
         <span class="indispensable">必須</span>
+        <% if @recipe.errors.include?(:name) %>
+        <p style="color: red;"><%= @recipe.errors.full_messages_for(:name).first %>
+        <% end %>
       </div>
       <%= f.text_area :name, class:"recipes-text", id:"recipe-name", 
       placeholder:"料理名 （必須 20文字まで) &#13;&#10;例） オムライス (1人前) ".html_safe, maxlength:"20" %>
@@ -37,6 +41,9 @@
         <div class="weight-bold-text">
           ジャンル
           <span class="indispensable">必須</span>
+          <% if @recipe.errors.include?(:genre_id) %>
+          <p style="color: red;"><%= @recipe.errors.full_messages_for(:genre_id).first %>
+          <% end %>
         </div>
         <div class="form">
           <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"recipe-genre"}) %>
@@ -46,6 +53,9 @@
         <div class="weight-bold-text">
           材料
           <span class="indispensable">必須</span>
+          <% if @recipe.errors.include?(:food) %>
+          <p style="color: red;"><%= @recipe.errors.full_messages_for(:food).first %>
+          <% end %>
         </div>
         <%= f.text_area :food, class:"recipes-text", id:"recipe-food", 
         placeholder:"材料 （必須 1,500文字まで）
@@ -58,6 +68,9 @@
         <div class="weight-bold-text">
           調味料
           <span class="indispensable">必須</span>
+          <% if @recipe.errors.include?(:seasoning) %>
+          <p style="color: red;"><%= @recipe.errors.full_messages_for(:seasoning).first %>
+          <% end %>
         </div>
         <%= f.text_area :seasoning, class:"recipes-text", id:"recipe-seasoning", 
         placeholder:"調味料 （必須 1,500文字まで）
@@ -70,6 +83,9 @@
         <div class="weight-bold-text">
           作り方
           <span class="indispensable">必須</span>
+          <% if @recipe.errors.include?(:procedure) %>
+          <p style="color: red;"><%= @recipe.errors.full_messages_for(:procedure).first %>
+          <% end %>
         </div>
         <%= f.text_area :procedure, class:"recipes-text", id:"recipe-procedure", 
         placeholder:"作り方（必須 6,000文字まで）
