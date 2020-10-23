@@ -28,9 +28,11 @@
     <ul class="all-recipe">
       <li class="recipe">
         <%= image_tag recipe.image, class:"recipe-image" %>
+        <%= link_to recipe_path(recipe.id),  method: :get do %>
         <h4 class="recipe-name">
           <%= recipe.name %>
         </h4>
+        <% end %>
       </li>
     </ul>
     <% end %>
