@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-  
+  before_action :set_recipe, only: [:show]
+
   def index
     @recipe = Recipe.all.order(id: 'DESC')
   end
@@ -17,7 +18,15 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
   private
+
+  def set_recipe
+    @recipe = Recipe.includes(:user).find(params[:id])
+  end
 
   def recipe_params
     params.require(:recipe).permit(:image, :name, :genre_id, :food, :seasoning, :procedure).merge(user_id: current_user.id)
