@@ -1,6 +1,6 @@
 /* レシピの概要 */
 .recipe-content {
-  width: 80vw;
+  width: 100vw;
   height: 80vw;
   display: flex;
   align-items: center;
@@ -29,8 +29,8 @@
 }
 
 .recipe-img {
-  width: 80%;
-  height: 40%;
+  width: 75%;
+  height: 50%;
 }
 
 .recipe-box {
@@ -57,5 +57,43 @@
 /* 作り方 */
 .recipe-procedure {
   width: 80%;
+  height: 30%;
+}
+
+/* 編集・削除ボタン */
+.recipe-lists {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-edit {
   height: 40%;
+  width: 30vw;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.recipe-edit:hover {
+  text-decoration: underline;
+}
+
+.recipe-destroy {
+  height: 40%;
+  width: 30vw;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.recipe-destroy:hover {
+  text-decoration: underline;
 }
