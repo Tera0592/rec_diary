@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit]
+  before_action :set_recipe, only: [:show, :edit, :update]
 
   def index
     @recipe = Recipe.all.order(id: 'DESC')
@@ -24,6 +24,14 @@ class RecipesController < ApplicationController
 
   def edit
     
+  end
+
+  def update
+    if @recipe.update(recipe_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
