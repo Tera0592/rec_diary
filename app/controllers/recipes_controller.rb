@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show]
+  before_action :set_recipe, only: [:show, :edit]
 
   def index
     @recipe = Recipe.all.order(id: 'DESC')
@@ -19,6 +19,10 @@ class RecipesController < ApplicationController
   end
 
   def show
+    
+  end
+
+  def edit
     
   end
 
