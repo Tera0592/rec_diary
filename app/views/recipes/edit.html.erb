@@ -1,0 +1,121 @@
+<%# レシピ投稿フォーム全体 %>
+<div class="recipes-post-contents">
+  
+  <%= render "shared/second-header" %>
+  
+  <div class="recipes-post-main">
+    <h2 class="recipes-post-title">料理のレシピを書く</h2>
+    
+    <%= form_with model: @recipe, url: recipes_path, method: :post, local: true do |f| %>
+    
+    <%# 料理の写真 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        料理の写真
+        <span class="indispensable">必須</span>
+        <% if @recipe.errors.include?(:image) %>
+        <p style="color: red;"><%= @recipe.errors.full_messages_for(:image).first %>
+        <% end %>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"recipe-image" %>
+      </div>
+    </div>
+    <%# /料理の写真 %>
+    
+    <%# 料理名、ジャンル、材料、調味料、作り方 %>
+    <div class="new-recipes">
+      <div class="weight-bold-text">
+        料理名
+        <span class="indispensable">必須</span>
+        <% if @recipe.errors.include?(:name) %>
+        <p style="color: red;"><%= @recipe.errors.full_messages_for(:name).first %>
+        <% end %>
+      </div>
+      <%= f.text_area :name, class:"recipes-text", id:"recipe-name", 
+      placeholder:"料理名 （必須 20文字まで) &#13;&#10;例） オムライス (1人前) ".html_safe, maxlength:"20" %>
+      <div class="recipes-genre">
+        <div class="weight-bold-text">
+          ジャンル
+          <span class="indispensable">必須</span>
+          <% if @recipe.errors.include?(:genre_id) %>
+          <p style="color: red;"><%= @recipe.errors.full_messages_for(:genre_id).first %>
+          <% end %>
+        </div>
+        <div class="form">
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"recipe-genre"}) %>
+        </div>
+      </div>
+      <div class="recipes-explain">
+        <div class="weight-bold-text">
+          材料
+          <span class="indispensable">必須</span>
+          <% if @recipe.errors.include?(:food) %>
+          <p style="color: red;"><%= @recipe.errors.full_messages_for(:food).first %>
+          <% end %>
+        </div>
+        <%= f.text_area :food, class:"recipes-text", id:"recipe-food", 
+        placeholder:"材料 （必須 1,500文字まで）
+        &#13;&#10;例）鶏もも肉  200g 
+        &#13;&#10;     玉ねぎ  1/4個 (約80g) 
+        &#13;&#10;     ご飯  200g 
+        &#13;&#10;     卵  2個 ".html_safe, rows:"10" ,maxlength:"1500" %>
+      </div>
+      <div class="recipes-explain">
+        <div class="weight-bold-text">
+          調味料
+          <span class="indispensable">必須</span>
+          <% if @recipe.errors.include?(:seasoning) %>
+          <p style="color: red;"><%= @recipe.errors.full_messages_for(:seasoning).first %>
+          <% end %>
+        </div>
+        <%= f.text_area :seasoning, class:"recipes-text", id:"recipe-seasoning", 
+        placeholder:"調味料 （必須 1,500文字まで）
+        &#13;&#10;例）塩  少々 
+        &#13;&#10;     胡椒  少々  
+        &#13;&#10;     トマトケチャップ  大さじ4 
+        &#13;&#10;     バター  適量".html_safe, rows:"10" ,maxlength:"1500" %>
+      </div>
+      <div class="recipes-explain">
+        <div class="weight-bold-text">
+          作り方
+          <span class="indispensable">必須</span>
+          <% if @recipe.errors.include?(:procedure) %>
+          <p style="color: red;"><%= @recipe.errors.full_messages_for(:procedure).first %>
+          <% end %>
+        </div>
+        <%= f.text_area :procedure, class:"recipes-text", id:"recipe-procedure", 
+        placeholder:"作り方（必須 6,000文字まで）
+        &#13;&#10;例） 1、 玉ねぎをみじん切り、鶏肉は細切れにし塩・胡椒を振る。 
+        &#13;&#10;       2、 フライパンにバター大さじ２を溶かし、中火で鶏肉を炒める。 
+        &#13;&#10;       3、 鶏肉にだいたい火が通ったら玉ねぎを加え、しんなりするまで炒める。 
+        &#13;&#10;       4、 ケチャップ大さじ2(分量の半量)を加え全体になじませながら炒める。 
+        &#13;&#10;       5、 ご飯を加え炒めます。 
+        &#13;&#10;       6、 残りのケチャップ大さじ２、塩、胡椒を入れて炒める。 
+        &#13;&#10;       7、 作ったチキンライスをお皿に移す。  
+        &#13;&#10;       8、 次に卵２個をボウルで割りほぐし、塩胡椒で調味して混ぜておく。 
+        &#13;&#10;       9、 フライパンを中火で熱し、バター大さじ１を溶かし、卵を一気に加える。 
+        &#13;&#10;      10、 できた卵を先ほど作ったチキンライスの上にのせる。  
+        &#13;&#10;      11、 オムライス完成。 ".html_safe, rows:"30" ,maxlength:"6000" %>
+      </div>
+    </div>
+    <%# 料理名、ジャンル、材料、調味料、作り方 %>
+
+    <%# レシピ投稿ボタン %>
+    <div class="post-btn-contents">
+      <%= f.submit "レシピを投稿する" ,class:"post-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# レシピ投稿ボタン %>
+
+  </div>
+
+  <% end %>
+
+  <%= render "shared/second-footer" %>
+  
+</div>
+<%# レシピ投稿フォーム全体 %>
