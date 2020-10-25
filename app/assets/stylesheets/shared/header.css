@@ -11,11 +11,13 @@ header {
   margin-left: 30px;
 }
 
+/* アプリのタイトル */
 .title {
   text-decoration: none;
   color: #333333;
 }
 
+/* レシピ検索欄 */
 .search-form {
   width: 40%;
   height: 5vh;
@@ -44,7 +46,7 @@ header {
   height: 100%;
 }
 
-
+/* 全ユーザーが使用する */
 .navbar {
   width: 30%;
   padding: 20px;
@@ -59,6 +61,22 @@ header {
 
 li{
   list-style: none;
+}
+
+/* ログインしているユーザーが使用する */
+.my-menu {
+  display: none;
+}
+
+.my-page {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+.my-page:hover {
+  text-decoration: underline;
 }
 
 .all-diary {
@@ -105,6 +123,7 @@ li{
   text-decoration: underline;
 }
 
+/* 新規ユーザー、未ログインユーザーが使用する */
 .login {
   text-decoration: none;
   margin-right: 3vw;
