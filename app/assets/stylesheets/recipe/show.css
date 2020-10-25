@@ -67,7 +67,7 @@
 
 .recipe-edit {
   height: 40%;
-  width: 30vw;
+  width: 30%;
   margin: 20px 0px;
   padding: 2vh 10vw;
   font-size: 24px;
@@ -81,9 +81,25 @@
   text-decoration: underline;
 }
 
+.recipe-index {
+  height: 40%;
+  width: 25%;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.recipe-index:hover {
+  text-decoration: underline;
+}
+
 .recipe-destroy {
   height: 40%;
-  width: 30vw;
+  width: 30%;
   margin: 20px 0px;
   padding: 2vh 10vw;
   font-size: 24px;
