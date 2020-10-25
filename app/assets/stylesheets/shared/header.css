@@ -61,16 +61,23 @@ header {
 
 li{
   list-style: none;
+  padding: 15px 35px 15px 15px;
+  border: 1px solid #eee;
 }
 
 /* ログインしているユーザーが使用する */
 .my-menu {
-  display: none;
+  width: 200px;
+  position: absolute;
+  right: 280px;
+  top: 90px;
+  background-color: white;
+  z-index: 1;
 }
 
 .my-page {
   text-decoration: none;
-  margin-right: 3vw;
+  padding: 15px;
   color: #333333;
   font-weight: bold;
 }
@@ -81,7 +88,7 @@ li{
 
 .all-diary {
   text-decoration: none;
-  margin-right: 3vw;
+  padding: 15px;
   color: #333333;
   font-weight: bold;
 }
@@ -92,7 +99,7 @@ li{
 
 .post-recipe {
   text-decoration: none;
-  margin-right: 3vw;
+  padding: 15px;
   color: #333333;
   font-weight: bold;
 }
