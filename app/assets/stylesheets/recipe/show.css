@@ -1,6 +1,5 @@
 /* レシピの概要 */
 .recipe-content {
-  width: 100vw;
   height: 80vw;
   display: flex;
   align-items: center;
