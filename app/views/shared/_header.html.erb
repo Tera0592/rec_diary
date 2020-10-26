@@ -14,7 +14,7 @@
       <li><%= link_to current_user.nickname, "#" , class: "user-nickname", id: "user" %></li>
       <ul class="my-menu", id="menu" >
         <li>
-        <%= link_to 'マイページ', "#" , class: "my-page" %>
+        <%= link_to 'マイページ', user_path(current_user.id) , class: "my-page" %>
         <%= image_tag "my-page-icon.png", class:"my-page-icon" %>
         </li>
         <li>
