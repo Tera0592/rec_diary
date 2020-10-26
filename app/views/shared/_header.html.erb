@@ -9,10 +9,10 @@
     </button>
   </form>
   <div class="navbar">
+    <% if user_signed_in? %>
     <ul class="nav-lists">
-      <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "#" , class: "user-nickname" %></li>
-      <ul class="my-menu">
+      <li><%= link_to current_user.nickname, "#" , class: "user-nickname", id: "user" %></li>
+      <ul class="my-menu", id="menu" >
         <li>
         <%= link_to 'マイページ', "#" , class: "my-page" %>
         <%= image_tag "my-page-icon.png", class:"my-page-icon" %>
@@ -27,10 +27,12 @@
         </li>
       </ul>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
+    </ul>
+    <% else %>
+    <ul class="nav-lists">
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
     </ul>
-  </div>
+    <% end %>
+</div>
 </header>
