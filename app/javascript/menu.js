@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function(){
   $("#user").on("click",function(){
     if ($('#menu').css('display') == 'none') {
       $("#menu").css("display", "block")
