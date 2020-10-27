@@ -70,10 +70,16 @@ ul,li {
   margin: 40px auto;
 }
 .all-recipe{
-  display: flex;
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(3, 1fr);;
+  margin-top: 6%;
+  margin-bottom: 50px;
   background-color: white;
-  justify-content: space-around;
-  margin: 10px 10px;
+}
+
+.recipe {
+  text-align: center;
 }
 
 .recipe-image {

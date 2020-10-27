@@ -24,8 +24,8 @@
     <h2 class="heading-name">レシピ一覧</h2>
     <!-- 投稿されたレシピがある場合、中身を全てを展開する -->
     <% if @recipe.present? %>
-    <% @recipe.each do |recipe| %>
     <ul class="all-recipe">
+      <% @recipe.each do |recipe| %>
       <li class="recipe">
         <%= image_tag recipe.image, class:"recipe-image" %>
         <%= link_to recipe_path(recipe.id),  method: :get do %>
@@ -34,8 +34,8 @@
         </h4>
         <% end %>
       </li>
+      <% end %>
     </ul>
-    <% end %>
     <!-- 投稿されたレシピがある場合、中身を全てを展開する -->
     <% else %>
     <!-- 投稿されたレシピがない場合のダミー -->
