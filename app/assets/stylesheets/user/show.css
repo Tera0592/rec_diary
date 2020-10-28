@@ -98,7 +98,7 @@
 
 /* レシピと日記 */
 .user-contents {
-  height: 75%;
+  height: 50%;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -130,7 +130,7 @@
   color: lightcoral;
 }
 
-.content-recipe-main {
+.recipe-main-content {
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -173,7 +173,7 @@
   width: 40%;
 }
 
-.content-diary-main {
+.diary-main-content {
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -196,9 +196,40 @@
 
 /* ユーザーが投稿したレシピ */
 .my-recipe-contents {
-  height: 25%;
+  height: 50%;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
+}
+
+.account-my-recipe {
+  height: 100%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipe-count {
+  display: flex;
+}
+
+.my-recipe-main {
+  height: 70%;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-recipe-image {
+  height: 300px;
+  width: 95%;
+  margin-top: 15px;
+  margin-bottom: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

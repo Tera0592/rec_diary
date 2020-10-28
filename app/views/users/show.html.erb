@@ -58,9 +58,9 @@
             <%= link_to 'レシピ一覧', "#" , class: "move-link" %>
           </div>
         </div>
-        <div class="content-recipe-main">
+        <div class="recipe-main-content">
           <div class="recipe-main-image">
-            <%= link_to 'レシピを書く', "#" , class: "write-recipe" %>
+            <%= link_to 'レシピを投稿する', "#" , class: "write-recipe" %>
           </div>
           <form class="recipe-search-form" action="#">
             <input class="recipe-input" placeholder="レシピを検索する">
@@ -78,7 +78,7 @@
             <%= link_to '日記一覧', "#" , class: "move-link" %>
           </div>
         </div>
-        <div class="content-diary-main">
+        <div class="diary-main-content">
           <div class="diary-main-image">
             <%= link_to '日記を書く', "#" , class: "write-diary" %>
           </div>
@@ -94,13 +94,16 @@
       <div class="account-my-recipe">
         <div class="content-title">
           <h4 class="content-name"> あなたが投稿したレシピ </h4>
-          <h4> レシピ投稿数 </h4>
-          <div class="content-link">
-            <%= link_to '日記一覧', "#" , class: "move-link" %>
+          <div class="recipe-count">
+            <h4> レシピ投稿数： </h4>
+            <h4> <%= @recipes.count %> </h4>
+            <h4> 個 </h4>
           </div>
         </div>
-        <div class="content-main">
-          <h3> さああなたも投稿して見よう </h3>
+        <div class="my-recipe-main">
+          <div class="my-recipe-image">
+            <h3> あなたもレシピを投稿してみよう </h3>
+          </div>
         </div>
       </div>
     </div>
