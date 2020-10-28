@@ -1,0 +1,71 @@
+<%= render "shared/third-header" %>
+
+<%# マイページ全体 %>
+<div class="my-page-contents">
+  <%# ユーザー登録情報 %>
+  <div class="account-content">
+
+    <%# イメージ画像 %>
+    <div class="account-box">
+      <h2 class="account-title">アカウント</h2>
+      <div class="account-image">
+        <%= image_tag "my-page-icon.png", class:"account-icon" %>
+      </div>
+    </div>
+    <%# イメージ画像 %>
+
+    <%# ニックネームとメールアドレス %>
+    <div class="account-registration">
+      <div class="account-basic-info">
+        <h5 class="basic-title"> 基本情報 </h5>
+        <%= link_to '編集する', "#" , class: "edit-btn" %>
+      </div>
+      <ul class="account-info">
+        <li class="row">
+          <div class="nickname">
+            ニックネーム
+          </div>
+          <div class="property">
+            <%= current_user.nickname %>
+          </div>
+        </li>
+        <li class="row">
+          <div class="email">
+            メールアドレス
+          </div>
+          <div class="property">
+            <%= current_user.email %>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <%# ニックネームとメールアドレス %>
+
+  </div>
+  <%# ユーザー登録情報 %>
+
+  <%# ユーザーの投稿情報 %>
+  <div class="account-content">
+    <div class="post-recipes">
+      <% if @recipes.present? %>
+      <ul class="all-recipe">
+        <% @recipes.each do |recipe| %>
+        <li class="recipe">
+          <%= image_tag recipe.image, class:"recipe-image" %>
+          <%= link_to recipe_path(recipe.id),  method: :get do %>
+          <h4 class="recipe-name">
+            <%= recipe.name %>
+          </h4>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+  <%# ユーザーの投稿情報 %>
+
+</div>
+<%# マイページ全体 %>
+
+<%= render "shared/footer" %>

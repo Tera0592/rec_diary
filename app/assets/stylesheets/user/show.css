@@ -1,0 +1,97 @@
+/* マイページ全体 */
+.my-page-contents {
+  width: 95vw;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* ユーザー登録情報 */
+.account-content {
+  height: 40%;
+  display: flex;
+  margin: 120px;
+}
+
+/* イメージ画像 */
+.account-box {
+  width: 50%;
+  float: left;
+}
+
+.account-title {
+  text-align: left;
+  padding-left: 50px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.account-image {
+  float: left;
+}
+
+.account-icon {
+  float: left;
+  width: 250px;
+  height: 250px;
+}
+
+/* ニックネームとメールアドレス */
+.account-registration {
+  width: 50%;
+  padding: 0px 60px;
+}
+
+.account-basic-info {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basic-title {
+  position: relative;
+  margin-bottom: 70px;
+  padding-bottom: .5em;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.edit-btn {
+  padding: 20px 30px;
+  margin-bottom: 50px;
+  color: #fff;
+  background-color: lightcoral;
+  font-size: 15px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.account-info {
+  margin-top: 0;
+}
+
+.row {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.nickname {
+  width: 50%;
+  text-align: start;
+}
+
+.email {
+  width: 50%;
+  text-align: start;
+}
+
+.property {
+  width: 50%;
+  text-align: start;
+}
+
+/* ユーザーの投稿情報 */
+.account-content {
+  height: 60%;
+  width: 100%;
+}
