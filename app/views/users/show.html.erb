@@ -45,23 +45,52 @@
   <%# ユーザー登録情報 %>
 
   <%# ユーザーの投稿情報 %>
-  <div class="account-content">
-    <div class="post-recipes">
-      <% if @recipes.present? %>
-      <ul class="all-recipe">
-        <% @recipes.each do |recipe| %>
-        <li class="recipe">
-          <%= image_tag recipe.image, class:"recipe-image" %>
-          <%= link_to recipe_path(recipe.id),  method: :get do %>
-          <h4 class="recipe-name">
-            <%= recipe.name %>
-          </h4>
-          <% end %>
-        </li>
-        <% end %>
-      </ul>
-      <% end %>
+  <div class="account-contents">
+    
+    <%# レシピ %>
+    <div class="recipe-contents">
+      <div class="account-recipe">
+        <div class="content-title">
+          <h4 class="content-name"> レシピ </h4>
+          <div class="content-link">
+            <%= link_to 'レシピ一覧', "#" , class: "move-link" %>
+          </div>
+        </div>
+        <div class="content-main">
+          <div class="main-image">
+            <%= link_to 'レシピを書く', "#" , class: "write-recipe" %>
+          </div>
+          <form class="recipe-search-form" action="#">
+            <input class="recipe-input" placeholder="レシピを検索する">
+            <input class="recipe-send" type="submit" value="検索">
+          </form>
+        </div>
+      </div>
+      <div class="my-recipe">
+        <div class="content-title">
+          <h4 class="content-name"> あなたの投稿したレシピ </h4>
+        </div>
+        <div class="content-main">
+        </div>
+      </div>
     </div>
+    <%# レシピ %>
+    
+    <%# 日記 %>
+    <div class="diary-contents">
+      <div class="account-diary">
+        <div class="content-title">
+          <h4 class="content-name"> 日記 </h4>
+          <div class="content-link">
+            <%= link_to '日記一覧', "#" , class: "move-link" %>
+          </div>
+        </div>
+        <div class="content-main">
+        </div>
+      </div>
+    </div>
+    <%# 日記 %>
+
   </div>
   <%# ユーザーの投稿情報 %>
 

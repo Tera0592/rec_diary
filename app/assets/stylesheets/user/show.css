@@ -91,7 +91,92 @@
 }
 
 /* ユーザーの投稿情報 */
-.account-content {
+.account-contents {
   height: 60%;
   width: 100%;
+}
+
+/* レシピ */
+.recipe-contents {
+  height: 75%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.account-recipe {
+  width: 40%;
+}
+
+/* 共通 */
+.content-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightcoral;
+}
+
+.content-name {
+  text-align: start;
+  padding-left: 25px;
+}
+
+.content-link {
+  padding: 10px;
+}
+
+.move-link {
+  vertical-align: middle;
+  margin-right: 20px;
+  color: lightcoral;
+}
+
+.content-main {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-image {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  background: #f5f5f5;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.write-recipe {
+  color: lightcoral;
+}
+
+/* レシピ検索フォーム */
+.recipe-search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-input {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.recipe-send {
+  padding: 5px;
+  margin: 15px;
+}
+
+.my-recipe {
+  width: 40%;
+}
+
+/* 日記 */
+.diary-contents {
+  height: 25%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
 }
