@@ -47,8 +47,10 @@
   <%# ユーザーの投稿情報 %>
   <div class="account-contents">
     
-    <%# レシピ %>
-    <div class="recipe-contents">
+    <%# レシピと日記 %>
+    <div class="user-contents">
+      
+      <%# レシピ %>
       <div class="account-recipe">
         <div class="content-title">
           <h4 class="content-name"> レシピ </h4>
@@ -56,8 +58,8 @@
             <%= link_to 'レシピ一覧', "#" , class: "move-link" %>
           </div>
         </div>
-        <div class="content-main">
-          <div class="main-image">
+        <div class="content-recipe-main">
+          <div class="recipe-main-image">
             <%= link_to 'レシピを書く', "#" , class: "write-recipe" %>
           </div>
           <form class="recipe-search-form" action="#">
@@ -66,18 +68,9 @@
           </form>
         </div>
       </div>
-      <div class="my-recipe">
-        <div class="content-title">
-          <h4 class="content-name"> あなたの投稿したレシピ </h4>
-        </div>
-        <div class="content-main">
-        </div>
-      </div>
-    </div>
-    <%# レシピ %>
-    
-    <%# 日記 %>
-    <div class="diary-contents">
+      <%# レシピ %>
+
+      <%# 日記 %>
       <div class="account-diary">
         <div class="content-title">
           <h4 class="content-name"> 日記 </h4>
@@ -85,11 +78,33 @@
             <%= link_to '日記一覧', "#" , class: "move-link" %>
           </div>
         </div>
+        <div class="content-diary-main">
+          <div class="diary-main-image">
+            <%= link_to '日記を書く', "#" , class: "write-diary" %>
+          </div>
+        </div>
+      </div>
+      <%# 日記 %>
+
+    </div>
+    <%# レシピと日記 %>
+    
+    <%# ユーザーが投稿したレシピ %>
+    <div class="my-recipe-contents">
+      <div class="account-my-recipe">
+        <div class="content-title">
+          <h4 class="content-name"> あなたが投稿したレシピ </h4>
+          <h4> レシピ投稿数 </h4>
+          <div class="content-link">
+            <%= link_to '日記一覧', "#" , class: "move-link" %>
+          </div>
+        </div>
         <div class="content-main">
+          <h3> さああなたも投稿して見よう </h3>
         </div>
       </div>
     </div>
-    <%# 日記 %>
+    <%# ユーザーが投稿したレシピ %>
 
   </div>
   <%# ユーザーの投稿情報 %>
