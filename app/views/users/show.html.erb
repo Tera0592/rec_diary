@@ -55,12 +55,12 @@
         <div class="content-title">
           <h4 class="content-name"> レシピ </h4>
           <div class="content-link">
-            <%= link_to 'レシピ一覧', "#" , class: "move-link" %>
+            <%= link_to 'レシピ一覧', root_path , class: "move-link" %>
           </div>
         </div>
         <div class="recipe-main-content">
           <div class="recipe-main-image">
-            <%= link_to 'レシピを投稿する', "#" , class: "write-recipe" %>
+            <%= link_to 'レシピを投稿する', new_recipe_path , class: "write-recipe" %>
           </div>
           <form class="recipe-search-form" action="#">
             <input class="recipe-input" placeholder="レシピを検索する">
