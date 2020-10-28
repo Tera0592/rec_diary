@@ -214,6 +214,31 @@
   display: flex;
 }
 
+/* 投稿したレシピ */
+.recipes-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+  height: 70%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipe-wrap {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-recipe-image {
+  width: 100%;
+  height: 90%;
+}
+
+/* 投稿したレシピがない場合のサンプル */
 .my-recipe-main {
   height: 70%;
   width: 98%;
@@ -221,7 +246,7 @@
   margin-right: auto;
 }
 
-.my-recipe-image {
+.my-recipe-sample {
   height: 300px;
   width: 95%;
   margin-top: 15px;
