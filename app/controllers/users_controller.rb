@@ -6,4 +6,8 @@ class UsersController < ApplicationController
     @recipes = current_user.recipes
   end
 
+  def edit
+    
+  end
+
 end
