@@ -29,13 +29,13 @@ RSpec.describe User, type: :model do
       it 'メールアドレスがなければ登録ができない' do
         @user.email = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("メールアドレスを入力してください", "メールアドレスは@を含めて入力してください。")
+        expect(@user.errors.full_messages).to include("メールアドレスが入力されていません。", "メールアドレスは@を含めて入力してください。")
       end
 
       it 'パスワードがなければ登録ができない' do
         @user.password = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください", "パスワードは6文字以上で入力してください", "パスワードは6文字以上の半角英数字で入力してください。")
+        expect(@user.errors.full_messages).to include("パスワードが入力されていません。", "パスワードは6文字以上に設定して下さい。", "パスワードは6文字以上の半角英数字で入力してください。")
       end
 
       # メールアドレス関連のテスト
@@ -44,7 +44,7 @@ RSpec.describe User, type: :model do
         @user.save
         another_user = FactoryBot.build(:user, email: @user.email)
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("メールアドレスはすでに存在します")
+        expect(another_user.errors.full_messages).to include("メールアドレスは既に使用されています。")
       end
 
       it 'メールアドレスに@がないとき登録ができない' do
@@ -59,7 +59,7 @@ RSpec.describe User, type: :model do
         @user.password = 'abcde'
         @user.password_confirmation = 'abcde'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードは6文字以上で入力してください")
+        expect(@user.errors.full_messages).to include("パスワードは6文字以上に設定して下さい。")
       end
 
       it 'パスワードが存在しても確認用パスワードが空だと登録ができない' do
