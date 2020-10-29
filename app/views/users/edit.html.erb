@@ -1,0 +1,38 @@
+<%= render "shared/second-header" %>
+
+<%= form_with model: current_user, class: 'edit-main', local: true do |f| %>
+
+<div class='form-wrap-edit'>
+  <div class='form-header-edit'>
+    <h1 class='form-header-edit-text'>
+      登録情報の変更
+    </h1>
+  </div>
+  
+  <div class="form-group-edit">
+    <div class='form-text-wrap-edit'>
+      <label class="form-edit-text">ニックネーム</label>
+    </div>
+    <%= f.text_area :nickname, class:"edit-nickname-default", id:"nickname", placeholder:"例) recipe太郎", maxlength:"20" %>
+  </div>
+
+  <div class="form-group-edit">
+    <div class='form-text-wrap-edit'>
+      <label class="form-edit-text">メールアドレス</label>
+    </div>
+    <%= f.email_field :email, class:"edit-email-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+  </div>
+
+  <div class='update-btn'>
+    <%= f.submit "更新する" ,class:"update-red-btn" %>
+  </div>
+
+  <div class="show-back-btn">
+    <%= link_to "戻る", :back, class: 'show-back-link-btn'%>
+  </div>
+  
+</div>
+
+<% end %>
+
+<%= render "shared/second-footer" %>
