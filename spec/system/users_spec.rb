@@ -61,3 +61,57 @@ RSpec.describe "ユーザー新規登録機能", type: :system do
   end
 
 end
+
+RSpec.describe "ユーザーログイン機能", type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+  context "ログインができるとき" do
+    
+    it '登録されているユーザーの情報と合致すればログインができる' do
+      
+      # トップページに移動する
+      visit root_path
+      # トップページにログインページへ遷移するボタンがある
+      expect(page).to have_content('ログイン')
+      # ログインページへ遷移する
+      visit new_user_session_path
+      # 正しい登録情報(ニックネーム、メールアドレス、パスワード、確認用のパスワード)を入力する
+      fill_in 'email', with: @user.email
+      fill_in 'password', with: @user.password
+      # ログインボタンを押す
+      find('input[name="commit"]').click
+      # トップページへ遷移する
+      expect(current_path).to eq root_path
+      # 会員登録ページへ遷移するボタンやログインページへ遷移するボタンが表示されていない
+      expect(page).to have_no_content ('新規登録')
+      expect(page).to have_no_content ('ログイン')
+      
+    end
+
+  end
+
+  context "ログインができないとき" do
+    
+    it '登録されているユーザの情報と合致しないとログインができない' do
+      
+      # トップページに移動する
+      visit root_path
+      # トップページにログインページへ遷移するボタンがある
+      expect(page).to have_content('ログイン')
+      # ログインページへ遷移する
+      visit new_user_session_path
+      # 正しい登録情報(ニックネーム、メールアドレス、パスワード、確認用のパスワード)を入力する
+      fill_in 'email', with: ""
+      fill_in 'password', with: ""
+      # ログインボタンを押す
+      find('input[name="commit"]').click
+      # ログインページへ戻される
+      expect(current_path).to eq new_user_session_path
+
+    end
+
+  end
+
+end
