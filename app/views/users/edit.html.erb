@@ -14,6 +14,9 @@
       <label class="form-edit-text">ニックネーム</label>
     </div>
     <%= f.text_area :nickname, class:"edit-nickname-default", id:"nickname", placeholder:"例) recipe太郎", maxlength:"20" %>
+    <% if current_user.errors.include?(:nickname) %>
+      <p style="color: red;"><%= current_user.errors.full_messages_for(:nickname).first %>
+    <% end %>
   </div>
 
   <div class="form-group-edit">
@@ -21,6 +24,9 @@
       <label class="form-edit-text">メールアドレス</label>
     </div>
     <%= f.email_field :email, class:"edit-email-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+    <% if current_user.errors.include?(:email) %>
+      <p style="color: red;"><%= current_user.errors.full_messages_for(:email).second %>
+    <% end %>
   </div>
 
   <div class='update-btn'>
