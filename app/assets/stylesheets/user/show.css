@@ -128,6 +128,11 @@
   vertical-align: middle;
   margin-right: 20px;
   color: lightcoral;
+  text-decoration: none;
+}
+
+.move-link:hover {
+  text-decoration: underline;
 }
 
 .recipe-main-content {
@@ -149,6 +154,11 @@
 
 .write-recipe {
   color: lightcoral;
+  text-decoration: none;
+}
+
+.write-recipe:hover {
+  text-decoration: underline;
 }
 
 /* レシピ検索フォーム */
@@ -192,6 +202,11 @@
 
 .write-diary {
   color: lightcoral;
+  text-decoration: none;
+}
+
+.write-diary:hover {
+  text-decoration: underline;
 }
 
 /* ユーザーが投稿したレシピ */
