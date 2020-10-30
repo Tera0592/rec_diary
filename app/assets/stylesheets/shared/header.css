@@ -2,6 +2,7 @@
 header {
   height: 50px;
   background-color: #f0f0f0;
+  justify-content: space-between;
   padding: 10px 0 ;
   display: flex;
 }
@@ -62,8 +63,7 @@ header {
 
 li{
   list-style: none;
-  padding: 15px 35px 15px 15px;
-  border: 1px solid #eee;
+  padding: 15px ;
 }
 
 /* ログインしているユーザーが使用する */

@@ -1,0 +1,11 @@
+<header>
+  <div class="heading">
+    <h1><%= link_to 'Recipe DIARY', root_path, class: "title" %></h1>
+  </div>
+  <div class="navbar">
+    <ul class="nav-lists">
+      <li><%= link_to current_user.nickname, "#" , class: "user-nickname" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    </ul>
+  </div>
+</header>
