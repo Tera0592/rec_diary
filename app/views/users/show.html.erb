@@ -106,8 +106,9 @@
         <ul class="recipes-wrapper">
           <% @recipes.each do |recipe| %>
           <li class="recipe-wrap">
-            <%= link_to recipe_path(recipe.id),  method: :get do %>
             <%= image_tag recipe.image, class:"my-recipe-image" %>
+            <%= link_to  recipe_path(recipe.id), class:"recipe-link", method: :get do %>
+            <h4 class="my-recipe-name"> <%= recipe.name %> </h4>
             <% end %>
           </li>
           <% end %>

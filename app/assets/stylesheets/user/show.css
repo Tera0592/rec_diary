@@ -251,6 +251,12 @@
   height: 90%;
 }
 
+.my-recipe-name  {
+  font-size: 20px;
+  text-align: center;
+  color: black;
+}
+
 /* 投稿したレシピがない場合のサンプル */
 .my-recipe-main {
   height: 70%;
