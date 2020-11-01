@@ -6,6 +6,10 @@ FactoryBot.define do
     seasoning   { Faker::Food.spice }
     procedure   { Faker::Food.description }
 
+    after(:build) do |recipe|
+      recipe.image.attach(io: File.open('spec/fixtures/recipe_test_image.jpg'), filename: 'recipe_test_image.jpg', content_type: 'image/jpg')
+    end
+
     association :user
     
   end

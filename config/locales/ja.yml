@@ -1,6 +1,15 @@
 ja:
   activerecord:
     models:
+      user: ユーザー
+    attributes:
+      user:
+        nickname:              ニックネーム
+        email:                 メールアドレス
+        password:              パスワード
+        password_confirmation: 確認用パスワード
+
+    models:
       recipe: レシピ
     attributes:
       recipe:
@@ -11,12 +20,3 @@ ja:
         food:              材料
         seasoning:         調味料
         procedure:         作り方
-
-    models:
-      user: ユーザー
-    attributes:
-      user:
-        nickname:              ニックネーム
-        email:                 メールアドレス
-        password:              パスワード
-        password_confirmation: 確認用パスワード

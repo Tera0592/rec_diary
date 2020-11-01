@@ -4,7 +4,6 @@ RSpec.describe Recipe, type: :model do
   
   before do
     @recipe = FactoryBot.build(:recipe)
-    @recipe.image = fixture_file_upload('public/images/test_image.png')
   end
 
   describe 'レシピを投稿する' do
