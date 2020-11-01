@@ -97,6 +97,15 @@ ul,li {
   align-items: center;
 }
 
+.recipe-link {
+  text-decoration: none;
+  color: black;
+}
+
+.recipe-link:hover {
+  text-decoration: underline;
+}
+
 .recipe-image {
   width: 100%;
   height: 90%;

@@ -28,7 +28,7 @@
       <% @recipe.each do |recipe| %>
       <li class="recipe">
         <%= image_tag recipe.image, class:"recipe-image" %>
-        <%= link_to recipe_path(recipe.id),  method: :get do %>
+        <%= link_to recipe_path(recipe.id), class:"recipe-link",  method: :get do %>
         <h4 class="recipe-name">
           <%= recipe.name %>
         </h4>
