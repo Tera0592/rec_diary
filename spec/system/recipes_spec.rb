@@ -229,3 +229,85 @@ RSpec.describe "レシピ編集", type: :system do
 
 end
 
+RSpec.describe "レシピ削除", type: :system do
+  before do
+    @recipe1 = FactoryBot.create(:recipe)
+    @recipe2 = FactoryBot.create(:recipe)
+  end
+  
+  context "レシピ削除ができるとき" do
+    
+    it 'ログインしたユーザーはトップページから自分が投稿したレシピの削除ができる' do
+      
+      # レシピ1を投稿したユーザーでログインする
+      log_in(@recipe1.user)
+      # 投稿されたレシピの詳細ページに遷移する
+      click_on(@recipe1.name)
+      visit recipe_path(@recipe1)
+      # レシピ詳細ページに"レシピの削除"のボタンがある
+      expect(page).to have_content ('レシピの削除')
+      # "レシピの削除"のボタンを押すとRecipeモデルのカウントが1下がる
+      expect{
+        find_link('レシピの削除', href: recipe_path(@recipe1)).click
+      }.to change { Recipe.count }.by(-1)
+      # トップページに遷移する
+      expect(current_path).to eq root_path
+      # トップページには先ほど削除したレシピが存在しない
+      expect(page).to have_no_content(@recipe1.name)
+      
+    end
+
+    it 'ログインしたユーザーはマイページから自分が投稿したレシピの削除ができる' do
+      
+      # レシピ1を投稿したユーザーでログインする
+      log_in(@recipe1.user)
+      # ユーザーニックネームが表示されているボタンを押すとマイページへ遷移する
+      click_link ('user')
+      visit user_path(@recipe1.user)
+      # レシピ詳細ページに遷移する
+      click_on(@recipe1.name)
+      visit recipe_path(@recipe1)
+      # レシピ詳細ページに"レシピの削除"のボタンがある
+      expect(page).to have_content ('レシピの削除')
+      # "レシピの削除"のボタンを押すとRecipeモデルのカウントが1下がる
+      expect{
+        find_link('レシピの削除', href: recipe_path(@recipe1)).click
+      }.to change { Recipe.count }.by(-1)
+      # トップページに遷移する
+      expect(current_path).to eq root_path
+      # トップページには先ほど削除したレシピが存在しない
+      expect(page).to have_no_content(@recipe1.name)
+      
+    end
+
+  end
+
+  context "レシピが削除できないとき" do
+    
+    it 'ログインしたユーザーは自分以外が投稿したレシピの削除画面には遷移できない' do
+      
+      # レシピ1を投稿したユーザーでログインする
+      log_in(@recipe1.user)
+      # レシピ2の詳細ページに遷移する
+      click_on(@recipe2.name)
+      visit recipe_path(@recipe2)
+      # レシピ2の詳細ページに"レシピの削除"のボタンがない
+      expect(page).to have_no_content ('レシピの削除')
+
+    end
+
+    it 'ログインしていないと投稿されているレシピの削除画面には遷移できない' do
+      
+      # トップページに遷移する
+      visit root_path
+      # レシピ1の詳細ページに遷移する
+      click_on(@recipe1.name)
+      visit recipe_path(@recipe1)
+      # レシピ1の詳細ページに"レシピの削除"のボタンがない
+      expect(page).to have_no_content ('レシピの削除')
+
+    end
+
+  end
+
+end
