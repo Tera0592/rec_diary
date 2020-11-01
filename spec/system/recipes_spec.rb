@@ -57,4 +57,42 @@ RSpec.describe "レシピ投稿", type: :system do
 
 end
 
+RSpec.describe "レシピ詳細", type: :system do
+  before do
+    @user1 = FactoryBot.create(:user)
+    @recipe1 = FactoryBot.create(:recipe)
+  end
+  
+  it 'ログインしたユーザーがレシピ詳細ページを閲覧できる' do
+    
+    # 新規登録済みのユーザーでログインする
+    log_in(@user1)
+    # 投稿されているレシピの詳細ページに遷移する
+    click_on(@recipe1.name)
+    visit recipe_path(@recipe1)
+    # レシピ詳細ページにレシピの内容が含まれる
+    expect(page).to have_content(@recipe_name)
+    expect(page).to have_content(@recipe_food)
+    expect(page).to have_content(@recipe_seasoning)
+    expect(page).to have_content(@recipe_procedure)
+    
+  end
+
+  it 'ログインしてないユーザーがレシピ詳細ページを閲覧できる' do
+  
+    # トップページに遷移する
+    visit root_path
+    # 投稿されているレシピの詳細ページに遷移する
+    click_on(@recipe1.name)
+    visit recipe_path(@recipe1)
+    # レシピ詳細ページにレシピの内容が含まれる
+    expect(page).to have_content(@recipe_name)
+    expect(page).to have_content(@recipe_food)
+    expect(page).to have_content(@recipe_seasoning)
+    expect(page).to have_content(@recipe_procedure)
+    
+  end
+
+end
+
 
