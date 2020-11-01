@@ -72,7 +72,7 @@
   padding: 2vh 10vw;
   font-size: 24px;
   font-weight: bold;
-  color: black;
+  color: lightcoral;
   text-align: center;
   text-decoration: none;
 }
@@ -81,19 +81,19 @@
   text-decoration: underline;
 }
 
-.recipe-index {
+.recipe-back {
   height: 40%;
   width: 25%;
   margin: 20px 0px;
   padding: 2vh 10vw;
   font-size: 24px;
   font-weight: bold;
-  color: black;
+  color: lightcoral;
   text-align: center;
   text-decoration: none;
 }
 
-.recipe-index:hover {
+.recipe-back:hover {
   text-decoration: underline;
 }
 
@@ -104,7 +104,7 @@
   padding: 2vh 10vw;
   font-size: 24px;
   font-weight: bold;
-  color: black;
+  color: lightcoral;
   text-align: center;
   text-decoration: none;
 }

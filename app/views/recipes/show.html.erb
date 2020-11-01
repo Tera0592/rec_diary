@@ -41,8 +41,12 @@
   <% if user_signed_in? && current_user.id == @recipe.user_id %>
   <div class="recipe-lists">
     <%= link_to 'レシピの編集', edit_recipe_path(@recipe.id), method: :get, class: "recipe-edit" %>
-    <%= link_to '戻る', root_path, class: "recipe-index" %>
+    <%= link_to '戻る', :back, class: "recipe-back" %>
     <%= link_to 'レシピの削除', recipe_path(@recipe.id), method: :delete, class:'recipe-destroy' %>
+  </div>
+  <% else %>
+  <div class="recipe-lists">
+    <%= link_to '戻る', :back, class: "recipe-back" %>
   </div>
   <% end %>
   <%# ログインしてるユーザーとレシピを投稿したユーザーが同一人物である場合のみレシピを編集・削除が可能 %>
