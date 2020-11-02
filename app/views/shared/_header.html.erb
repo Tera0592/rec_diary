@@ -9,21 +9,29 @@
   <div class="navbar">
     <% if user_signed_in? %>
     <ul class="nav-lists">
-      <li><%= link_to current_user.nickname, "#" , class: "user-nickname", id: "user" %></li>
-      <ul class="my-menu", id="menu" >
-        <li>
-        <%= link_to 'マイページ', user_path(current_user.id) , class: "my-page" %>
-        <%= image_tag "my-page-icon.png", class:"my-page-icon" %>
-        </li>
-        <li>
-        <%= link_to '日記一覧', "#" , class: "all-diary" %>
-        <%= image_tag "diary-icon.png", class:"diary-icon" %>
-        </li>
-        <li>
-        <%= link_to 'レシピを投稿する', "recipes/new" , class: "post-recipe" %>
-        <%= image_tag "recipe-icon.png", class:"recipe-icon" %>
-        </li>
-      </ul>
+      <li class="user-nickname"> 
+        <a href=""> <%= current_user.nickname %> </a> 
+        <ul class="my-menu" >
+          <li>
+            <a href=""> 
+              <%= link_to 'マイページ', user_path(current_user.id) , class: "my-page" %>
+              <%= image_tag "my-page-icon.png", class:"my-page-icon" %> 
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <%= link_to '日記一覧', "#" , class: "all-diary" %>
+              <%= image_tag "diary-icon.png", class:"diary-icon" %>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <%= link_to 'レシピを投稿する', "recipes/new" , class: "post-recipe" %>
+              <%= image_tag "recipe-icon.png", class:"recipe-icon" %>
+            </a>
+          </li>
+        </ul>
+      </li> 
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     </ul>
     <% else %>

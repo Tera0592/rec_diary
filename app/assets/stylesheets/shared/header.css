@@ -60,6 +60,13 @@ header {
   justify-content: space-evenly;
 }
 
+a{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
 li{
   list-style: none;
   padding: 15px ;
