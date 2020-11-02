@@ -1,0 +1,10 @@
+<div class="search-content">
+  <div class="search-recipe">
+    <%= image_tag recipe.image, class:"search-recipe-image" %>
+  </div>
+  <%= link_to recipe_path(recipe.id), class:"recipe-link",  method: :get do %>
+  <h4 class="recipe-name">
+    <%= recipe.name %>
+  </h4>
+  <% end %>
+</div>
