@@ -26,15 +26,16 @@ header {
   margin-bottom: 5px;
 }
 
-.search-form>.input-box {
+.search-form>.recipe-search {
   width: 100%;
   height: 5vh;
+  outline:0;
   padding-left: 10px;
 }
 
 .search-button {
-  width: 5vh;
-  height: 5vh;
+  width: 10vh;
+  height: 6vh;
   border: 0;
   cursor: pointer;
   background-color: #f0f0f0;
@@ -42,10 +43,8 @@ header {
   padding-left: 10px;
 }
 
-.search-icon {
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
+.search-button:hover {
+  color: lightcoral;
 }
 
 /* 全ユーザーが使用する */
