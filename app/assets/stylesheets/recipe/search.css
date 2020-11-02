@@ -1,0 +1,35 @@
+.recipes-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-content {
+  width: 80%;
+  height: 90vh;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 400px;
+  display: grid;
+}
+
+.search-recipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-recipe-image {
+  width: 40%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.no-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20%;
+}

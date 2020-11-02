@@ -1,0 +1,18 @@
+<%= render "shared/header" %>
+
+<% if @recipes.present? %>
+<div class="recipes-row" >
+  <% @recipes.each do |recipe| %>
+    <%= render partial: "recipe", locals: { recipe: recipe } %>
+  <% end %>
+</div>
+
+<% else %>
+
+<div class="no-contents">
+  <h3 class="no-recipe">
+    該当するレシピがございません 
+  </h3>
+</div>
+
+<% end %>

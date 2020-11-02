@@ -18,4 +18,14 @@ class Recipe < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :genre
+
+  # レシピ検索
+  def self.search(search)
+    if search
+      Recipe.where('name LIKE(?)', "%#{search}%")
+    else
+      Recipe.all
+    end
+  end
+
 end
