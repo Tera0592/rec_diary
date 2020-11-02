@@ -15,9 +15,10 @@ RSpec.describe "レシピ投稿", type: :system do
       
       # ログインする
       log_in(@user)
-      # ユーザーニックネームが表示されているボタンを押すと"レシピを投稿する"へ遷移するボタンがある
-      click_link ('user')
-      expect(page).to have_content ('レシピを投稿する')
+      # ニックネームの部分に、マウスを持ってくと"レシピを投稿する"へ遷移するボタンがある
+      expect(
+        find(".user-nickname").hover
+      ).to have_content ('レシピを投稿する')
       # レシピ投稿ページに移動する
       visit new_recipe_path
       # フォームに情報を入力する
@@ -34,9 +35,8 @@ RSpec.describe "レシピ投稿", type: :system do
       }.to change { Recipe.count }.by(1)
       # トップページ(レシピ一覧表示ページ)に遷移する
       expect(current_path).to eq root_path
-      # トップページには先ほど投稿したレシピ(写真、料理名)が存在する
+      # トップページには先ほど投稿したレシピが存在する
       expect(page).to have_selector "img[src$='recipe_test_image.jpg']"
-      expect(page).to have_content(@recipe_name)
 
     end
 
@@ -154,8 +154,11 @@ RSpec.describe "レシピ編集", type: :system do
       
       # レシピ1を投稿したユーザーでログインする
       log_in(@recipe1.user)
-      # ユーザーニックネームが表示されているボタンを押すとマイページへ遷移する
-      click_link ('user')
+      # ニックネームの部分に、マウスを持ってくと"マイページ"へ遷移するボタンがある
+      expect(
+        find(".user-nickname").hover
+      ).to have_content ('マイページ')
+      # マイページへ遷移する
       visit user_path(@recipe1.user)
       # レシピ詳細ページに遷移する
       click_on(@recipe1.name)
@@ -261,8 +264,11 @@ RSpec.describe "レシピ削除", type: :system do
       
       # レシピ1を投稿したユーザーでログインする
       log_in(@recipe1.user)
-      # ユーザーニックネームが表示されているボタンを押すとマイページへ遷移する
-      click_link ('user')
+      # ニックネームの部分に、マウスを持ってくと"マイページ"へ遷移するボタンがある
+      expect(
+        find(".user-nickname").hover
+      ).to have_content ('マイページ')
+      # マイページへ遷移する
       visit user_path(@recipe1.user)
       # レシピ詳細ページに遷移する
       click_on(@recipe1.name)
