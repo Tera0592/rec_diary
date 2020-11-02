@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :password_confirmation, presence:                                        {                          message: "を入力してください。"} , on: :create
   
   has_many  :recipes
+  has_many  :diaries
 end

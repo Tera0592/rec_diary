@@ -6,5 +6,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :diaries
   resources :users, only: [:show, :edit, :update]
 end
