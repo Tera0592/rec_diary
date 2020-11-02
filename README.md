@@ -11,6 +11,7 @@
 
 ### Association
 - has_many :recipes
+- has_many :diaries
 
 ### recipes テーブル
 
@@ -22,6 +23,18 @@
 | food               | text        | null: false                    |
 | seasoning          | text        | null: false                    |
 | procedure          | text        | null: false                    |
+
+### Association
+- belongs_to  :user
+
+### diaries テーブル
+
+| Column             | Type        | Options                        |
+| ------------------ | ----------- | ------------------------------ |
+| user               | references  | null: false, foreign_key: true |
+| time               | datetime    | null: false                    |
+| title              | string      | null: false                    |
+| impression         | text        | null: false                    |
 
 ### Association
 - belongs_to  :user
