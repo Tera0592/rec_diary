@@ -1,0 +1,33 @@
+<header>
+  <div class="heading">
+    <h1><%= link_to 'Recipe DIARY', root_path, class: "title" %></h1>
+  </div>
+  <div class="navbar">
+    <ul class="nav-lists">
+      <li class="user-nickname"> 
+        <a href=""> <%= current_user.nickname %> </a> 
+        <ul class="my-menu" >
+          <li>
+            <a href=""> 
+              <%= link_to 'マイページ', user_path(current_user.id) , class: "my-page" %>
+              <%= image_tag "my-page-icon.png", class:"my-page-icon" %> 
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <%= link_to 'レシピ一覧', root_path , class: "recipe-menu" %>
+              <%= image_tag "recipe-book-icon.png", class:"all-recipe-icon" %>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <%= link_to 'レシピを投稿する', "recipes/new" , class: "post-recipe" %>
+              <%= image_tag "recipe-icon.png", class:"recipe-icon" %>
+            </a>
+          </li>
+        </ul>
+      </li> 
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    </ul>
+</div>
+</header>

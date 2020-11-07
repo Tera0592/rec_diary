@@ -1,0 +1,124 @@
+/* fourth-header */
+.recipe-menu {
+  text-decoration: none;
+  padding: 25px;
+  color: #333333;
+  font-weight: bold;
+}
+
+.recipe-menu:hover {
+  text-decoration: underline;
+}
+
+.all-recipe-icon {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+/* 日記一覧 */
+.diary-contents {
+  margin-top: 50px;
+  margin-bottom: 500px;
+  height: 500px;
+  width: 100%;
+}
+
+.diary-year {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.year {
+  margin-left: 50px;
+}
+
+.diary-wrap {
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+  top: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+}
+
+.diary-month {
+  width: 25%;
+  text-align: center;
+  color: #3ccace;
+}
+
+.day {
+  height: 15%;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  font-size: 25px;
+}
+
+.number {
+  height: 30%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size: 60px;
+}
+
+.time {
+  height: 10%;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+
+.diary-box {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.diary-title {
+  width: 70%;
+  text-align: left;
+}
+
+.main-title {
+  padding-left: 30px;
+  font-size: 45px;
+  color: gray;
+}
+
+.diary-image {
+  width: 30%;
+  margin-top: 80px;
+  margin-right: 35px;
+  height: 55%;
+  background-color: red;
+}
+
+/* 日記を書くボタン  */
+.write-btn {
+  width: 120px;
+  background: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.write-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.write-btn-icon {
+  width: 80%;
+  height: 60%;
+}

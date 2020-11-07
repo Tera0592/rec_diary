@@ -1,0 +1,36 @@
+<%= render "shared/fourth-header" %>
+
+<%# 日記一覧 %>
+<div class="diary-contents">
+  <div class="diary-year">
+    <h3 class="year"> 2020/10 </h3>
+  </div>
+  <div class="diary-wrap">
+    <div class="diary-month">
+      <h4 class="day"> TUE </h4>
+      <h4 class="number"> 22 </h4>
+      <h4 class="time"> 20:12 </h4>
+    </div>
+    <div class="diary-box">
+      <div class="diary-title">
+        <h3 class="main-title"> 
+          母の日の記念料理
+        </h3>
+      </div>
+      <div class="diary-image">
+      </div>
+    </div>
+  </div>
+</div>
+<%# 日記一覧 %>
+
+<%# 日記を書くボタン %>
+<div class='write-btn'>
+  <span class='write-btn-text'>日記を書く</span>
+  <a href="/diaries/new">
+    <%= image_tag 'write-diary.png' , size: '185x50' ,class: "write-btn-icon" %>
+  </a>
+</div>
+<%# 日記を書くボタン %>
+
+<%= render "shared/footer" %>
