@@ -1,0 +1,75 @@
+/* 日記記録フォーム全体 */
+.writes-diary-contents {
+  background-color: #f5f5f5;
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.writes-diary-main {
+  background-color: #FFF;
+  width: 60vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.writes-diary-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+/* 日記記録フォーム全体 */
+
+/* 写真 */
+.diary-img {
+  width: 200px;
+  height: 200px;
+}
+/* 写真 */
+
+/* 日時 */
+.input-time {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.time-upload {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 3vh 0;
+}
+
+.time-upload>p {
+  margin-bottom: 10px;
+}
+
+.time-upload>select {
+  width: 20%;
+}
+
+/* 日時 */
+
+/* タイトルと感想 */
+.new-diaries {
+  padding: 2vh 0;
+}
+
+.diaries-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.diaries-explain {
+  margin-top: 2vh;
+}
+/* タイトルと感想 */
