@@ -1,0 +1,51 @@
+<%= render "shared/fourth-header" %>
+
+<%# 日記一覧 %>
+<div class="diary-contents">
+  <%# 現在ログインしてるユーザーの日記があれば表示する %>
+<% if current_user.diaries.present? %>
+  <% current_user.diaries.each do |diary| %>
+  <div class="diary-year">
+    <h3 class="year"> <%= diary.time.year %> / <%= diary.time.month %> </h3>
+  </div>
+  <div class="diary-wrap">
+    <div class="diary-month">
+      <h4 class="day"> <%= diary.time.strftime("%a") %> </h4>
+      <h4 class="number"> <%= diary.time.day %> </h4>
+      <h4 class="time"> <%= diary.created_at.strftime("%H") %> : <%= diary.created_at.strftime("%M") %> </h4>
+    </div>
+    <div class="diary-box">
+      <div class="diary-title">
+        <h3 class="main-title"> 
+          <%= diary.title %>
+        </h3>
+      </div>
+      <div class="diary-image">
+        <%= image_tag diary.image, size: '250x240' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <%# 現在ログインしてるユーザーの日記があれば表示する %>
+<% else %>
+  <%# 現在ログインしてるユーザーの日記が無い場合の表示 %>
+  <div class="no-diary-contents">
+    <h3 class="diary-message">
+      現在投稿している日記はまだありません。
+    </h3>
+  </div>
+<% end %>
+  <%# 現在ログインしてるユーザーの日記が無い場合の表示 %>
+</div>
+<%# 日記一覧 %>
+
+<%# 日記を書くボタン %>
+<div class='write-btn'>
+  <span class='write-btn-text'>日記を書く</span>
+  <a href="/diaries/new">
+    <%= image_tag 'write-diary.png' , size: '185x50' ,class: "write-btn-icon" %>
+  </a>
+</div>
+<%# 日記を書くボタン %>
+
+<%= render "shared/footer" %>

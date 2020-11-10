@@ -1,0 +1,97 @@
+<%= render "shared/second-header" %>
+
+<%# 日記記録フォーム全体 %>
+<div class="writes-diary-contents">
+  <div class="writes-diary-main">
+    <h2 class="writes-diary-title">料理の記録を書く</h2>
+
+    <%= form_with model: @diary, url: diaries_path, method: :post, local: true do |f| %>
+
+    <%# 写真 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        日記の写真
+        <span class="indispensable">必須</span>
+        <% if @diary.errors.include?(:image) %>
+        <p style="color: red;"><%= @diary.errors.full_messages_for(:image).first %>
+        <% end %>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"diary-image" %>
+      </div>
+    </div>
+    <%# 写真 %>
+
+    <%# 日時 %>
+    <div class="input-time">
+      <div class="weight-bold-text">
+         作った日時
+        <span class="indispensable">必須</span>
+        <% if @diary.errors.include?(:time) %>
+        <p style="color: red;"><%= @diary.errors.full_messages_for(:time).first %>
+        <% end %>
+      </div>
+      <div class="time-upload">
+        <p>
+          日時を選択してください
+        </p>
+        <%= raw sprintf(
+                  f.date_select(
+                    :time,
+                    class:"select-time",
+                    default: Date.new(Time.now.year, Time.now.month, Time.now.day),
+                    use_month_numbers: true,
+                    start_year: (Time.now.year - 3),
+                    end_year: (Time.now.year ),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+      </div>
+    </div>
+    <%# 日時 %>
+
+    <%# タイトルと感想 %>
+    <div class="new-diaries">
+      
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+        <% if @diary.errors.include?(:title) %>
+        <p style="color: red;"><%= @diary.errors.full_messages_for(:title).first %>
+        <% end %>
+      </div>
+      <%= f.text_area :title, class:"diaries-text", id:"diary-title", 
+      placeholder:"タイトル （必須 20文字まで) &#13;&#10;例） 母の日に作った料理 ".html_safe, maxlength:"20" %>
+      
+      <div class="diaries-explain">
+        <div class="weight-bold-text">
+          感想
+          <span class="indispensable">必須</span>
+          <% if @diary.errors.include?(:impression) %>
+          <p style="color: red;"><%= @diary.errors.full_messages_for(:impression).first %>
+          <% end %>
+        </div>
+        <%= f.text_area :impression, class:"diaries-text", id:"diary-impression", 
+        placeholder:"作った料理の感想や反省点を書いてみよう（必須 1,000文字まで）
+        &#13;&#10;例）今日は母の日だったので、オムライスを作りました。全体的にうまくいったが火加減に失敗してしまったので次回以降気を付けたい。  ".html_safe, rows:"20" ,maxlength:"1000" %>
+      </div>
+
+    </div>
+    <%# タイトルと感想 %>
+
+    <%# 日記投稿ボタン %>
+    <div class="post-btn-contents">
+      <%= f.submit "日記を投稿する" ,class:"post-btn" %>
+      <%=link_to 'もどる', :back, class:"back-btn" %>
+    </div>
+    <%# 日記投稿ボタン %>
+
+    <% end %>
+
+  </div>
+</div>
+<%# 日記記録フォーム全体 %>
+
+<%= render "shared/second-footer" %>

@@ -20,3 +20,12 @@ ja:
         food:              材料
         seasoning:         調味料
         procedure:         作り方
+
+    models:
+      diary: 日記
+    attributes:
+      diary:
+        time:              作った日時
+        image:             日記の写真
+        title:             タイトル
+        impression:        感想

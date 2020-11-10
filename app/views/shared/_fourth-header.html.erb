@@ -2,12 +2,7 @@
   <div class="heading">
     <h1><%= link_to 'Recipe DIARY', root_path, class: "title" %></h1>
   </div>
-  <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: 'キーワードから探す', class: "recipe-search" %>
-    <%= form.submit "検索", class: "search-button" %>
-  <% end %>
   <div class="navbar">
-    <% if user_signed_in? %>
     <ul class="nav-lists">
       <li class="user-nickname"> 
         <a href=""> <%= current_user.nickname %> </a> 
@@ -20,8 +15,8 @@
           </li>
           <li>
             <a href="">
-              <%= link_to '日記一覧', diaries_path , class: "all-diary" %>
-              <%= image_tag "diary-icon.png", class:"diary-icon" %>
+              <%= link_to 'レシピ一覧', root_path , class: "recipe-menu" %>
+              <%= image_tag "recipe-book-icon.png", class:"all-recipe-icon" %>
             </a>
           </li>
           <li>
@@ -34,11 +29,5 @@
       </li> 
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     </ul>
-    <% else %>
-    <ul class="nav-lists">
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-    </ul>
-    <% end %>
 </div>
 </header>
