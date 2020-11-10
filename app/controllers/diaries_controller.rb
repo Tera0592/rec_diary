@@ -1,7 +1,7 @@
 class DiariesController < ApplicationController
 
   def index
-    @diaries = Diary.all.order(id: 'DESC')
+    @diary = Diary.includes(:user).order("time DESC")
   end
 
   def new
