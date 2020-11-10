@@ -2,25 +2,40 @@
 
 <%# 日記一覧 %>
 <div class="diary-contents">
+  <%# 現在ログインしてるユーザーの日記があれば表示する %>
+<% if current_user.diaries.present? %>
+  <% current_user.diaries.each do |diary| %>
   <div class="diary-year">
-    <h3 class="year"> 2020/10 </h3>
+    <h3 class="year"> <%= diary.time.year %> / <%= diary.time.month %> </h3>
   </div>
   <div class="diary-wrap">
     <div class="diary-month">
-      <h4 class="day"> TUE </h4>
-      <h4 class="number"> 22 </h4>
-      <h4 class="time"> 20:12 </h4>
+      <h4 class="day"> <%= diary.time.strftime("%a") %> </h4>
+      <h4 class="number"> <%= diary.time.day %> </h4>
+      <h4 class="time"> <%= diary.created_at.strftime("%H") %> : <%= diary.created_at.strftime("%M") %> </h4>
     </div>
     <div class="diary-box">
       <div class="diary-title">
         <h3 class="main-title"> 
-          母の日の記念料理
+          <%= diary.title %>
         </h3>
       </div>
       <div class="diary-image">
+        <%= image_tag diary.image, size: '250x240' %>
       </div>
     </div>
   </div>
+  <% end %>
+  <%# 現在ログインしてるユーザーの日記があれば表示する %>
+<% else %>
+  <%# 現在ログインしてるユーザーの日記が無い場合の表示 %>
+  <div class="no-diary-contents">
+    <h3 class="diary-message">
+      現在投稿している日記はまだありません。
+    </h3>
+  </div>
+<% end %>
+  <%# 現在ログインしてるユーザーの日記が無い場合の表示 %>
 </div>
 <%# 日記一覧 %>
 
