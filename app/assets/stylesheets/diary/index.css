@@ -122,9 +122,10 @@
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
-  right: 32px;
+  right: 20px;
   position: fixed;
-  padding: 15px;
+  padding: 5px;
+  z-index: 1;
 }
 
 .write-btn-text {
