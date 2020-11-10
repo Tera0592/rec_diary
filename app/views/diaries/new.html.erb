@@ -12,6 +12,9 @@
       <div class="weight-bold-text">
         日記の写真
         <span class="indispensable">必須</span>
+        <% if @diary.errors.include?(:image) %>
+        <p style="color: red;"><%= @diary.errors.full_messages_for(:image).first %>
+        <% end %>
       </div>
       <div class="click-upload">
         <p>
@@ -27,6 +30,9 @@
       <div class="weight-bold-text">
          作った日時
         <span class="indispensable">必須</span>
+        <% if @diary.errors.include?(:time) %>
+        <p style="color: red;"><%= @diary.errors.full_messages_for(:time).first %>
+        <% end %>
       </div>
       <div class="time-upload">
         <p>
@@ -52,6 +58,9 @@
       <div class="weight-bold-text">
         タイトル
         <span class="indispensable">必須</span>
+        <% if @diary.errors.include?(:title) %>
+        <p style="color: red;"><%= @diary.errors.full_messages_for(:title).first %>
+        <% end %>
       </div>
       <%= f.text_area :title, class:"diaries-text", id:"diary-title", 
       placeholder:"タイトル （必須 20文字まで) &#13;&#10;例） 母の日に作った料理 ".html_safe, maxlength:"20" %>
@@ -60,6 +69,9 @@
         <div class="weight-bold-text">
           感想
           <span class="indispensable">必須</span>
+          <% if @diary.errors.include?(:impression) %>
+          <p style="color: red;"><%= @diary.errors.full_messages_for(:impression).first %>
+          <% end %>
         </div>
         <%= f.text_area :impression, class:"diaries-text", id:"diary-impression", 
         placeholder:"作った料理の感想や反省点を書いてみよう（必須 1,000文字まで）
