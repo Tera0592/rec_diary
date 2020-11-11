@@ -144,6 +144,10 @@ li{
   text-decoration: underline;
 }
 
+.user-nickname:hover ul {
+  display: block;
+}
+
 .logout {
   text-decoration: none;
   margin-right: 3vw;
