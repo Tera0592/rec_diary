@@ -44,7 +44,7 @@ RSpec.describe "レシピ投稿", type: :system do
 
   context "レシピが投稿できないとき" do
     
-    it 'ログインしていないとレシピ投稿ページができない' do
+    it 'ログインしていないとレシピ投稿ができない' do
       
       # トップページに遷移する
       visit root_path
