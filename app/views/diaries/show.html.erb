@@ -19,7 +19,7 @@
       <span class="show-preview"> 
         <ul class="show_more_list">
           <li>
-            <%= link_to '編集', "#", method: :get, class: "diary_list" %>
+            <%= link_to '編集', edit_diary_path(@diary.id), method: :get, class: "diary_list" %>
           </li>
           <li>
             <%= link_to '削除', "#", method: :delete, class: "diary_list" %>

@@ -27,7 +27,7 @@
               <%= link_to '詳細', diary_path(diary.id), method: :get, class: "diary_list" %>
             </li>
             <li>
-              <%= link_to '編集', "#", method: :get, class: "diary_list" %>
+              <%= link_to '編集', edit_diary_path(diary.id), method: :get, class: "diary_list" %>
             </li>
             <li>
               <%= link_to '削除', "#", method: :delete, class: "diary_list" %>
