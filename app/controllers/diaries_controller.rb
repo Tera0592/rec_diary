@@ -1,5 +1,5 @@
 class DiariesController < ApplicationController
-  before_action :set_diary, only: [:show]
+  before_action :set_diary, only: [:show, :edit]
 
   def index
     @diary = Diary.includes(:user).order("time DESC")
@@ -19,6 +19,10 @@ class DiariesController < ApplicationController
   end
 
   def show
+    
+  end
+
+  def edit
     
   end
 
