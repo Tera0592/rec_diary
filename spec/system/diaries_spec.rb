@@ -233,6 +233,7 @@ end
 RSpec.describe "日記削除", type: :system do
   before do
     @diary1 = FactoryBot.create(:diary)
+    @another_user = FactoryBot.create(:user)
   end
   
   context "日記削除ができるとき" do
@@ -247,80 +248,47 @@ RSpec.describe "日記削除", type: :system do
       ).to have_content ('日記一覧')
       # 日記一覧ページに移動する
       visit diaries_path
-      # 投稿されている日記の"▼"部分に、マウスを持ってくと、"詳細"へ遷移するボタンがある
+      # 投稿されている日記の"▼"部分に、マウスを持ってくと、"削除"ボタンがある
       expect(
         find(".preview").hover
-      ).to have_content ('編集')
-      # レシピ1を投稿したユーザーでログインする
-      log_in(@recipe1.user)
-      # 投稿されたレシピの詳細ページに遷移する
-      click_on(@recipe1.name)
-      visit recipe_path(@recipe1)
-      # レシピ詳細ページに"レシピの削除"のボタンがある
-      expect(page).to have_content ('レシピの削除')
-      # "レシピの削除"のボタンを押すとRecipeモデルのカウントが1下がる
+      ).to have_content ('削除')
+      # "削除"ボタンを押すとDiaryモデルのカウントが1下がる
       expect{
-        find_link('レシピの削除', href: recipe_path(@recipe1)).click
-      }.to change { Recipe.count }.by(-1)
+        find_link('削除', href: diary_path(@diary1)).click
+      }.to change { Diary.count }.by(-1)
       # トップページに遷移する
-      expect(current_path).to eq root_path
+      expect(current_path).to eq diaries_path
       # トップページには先ほど削除したレシピが存在しない
-      expect(page).to have_no_content(@recipe1.name)
-      
-    end
-
-    it 'ログインしたユーザーはマイページから自分が投稿したレシピの削除ができる' do
-      
-      # レシピ1を投稿したユーザーでログインする
-      log_in(@recipe1.user)
-      # ニックネームの部分に、マウスを持ってくと"マイページ"へ遷移するボタンがある
-      expect(
-        find(".user-nickname").hover
-      ).to have_content ('マイページ')
-      # マイページへ遷移する
-      visit user_path(@recipe1.user)
-      # レシピ詳細ページに遷移する
-      click_on(@recipe1.name)
-      visit recipe_path(@recipe1)
-      # レシピ詳細ページに"レシピの削除"のボタンがある
-      expect(page).to have_content ('レシピの削除')
-      # "レシピの削除"のボタンを押すとRecipeモデルのカウントが1下がる
-      expect{
-        find_link('レシピの削除', href: recipe_path(@recipe1)).click
-      }.to change { Recipe.count }.by(-1)
-      # トップページに遷移する
-      expect(current_path).to eq root_path
-      # トップページには先ほど削除したレシピが存在しない
-      expect(page).to have_no_content(@recipe1.name)
+      expect(page).to have_no_content(@diary1.title)
       
     end
 
   end
 
-  context "レシピが削除できないとき" do
+  context "日記が削除できないとき" do
     
-    it 'ログインしたユーザーは自分以外が投稿したレシピの削除画面には遷移できない' do
-      
-      # レシピ1を投稿したユーザーでログインする
-      log_in(@recipe1.user)
-      # レシピ2の詳細ページに遷移する
-      click_on(@recipe2.name)
-      visit recipe_path(@recipe2)
-      # レシピ2の詳細ページに"レシピの削除"のボタンがない
-      expect(page).to have_no_content ('レシピの削除')
-
-    end
-
-    it 'ログインしていないと投稿されているレシピの削除画面には遷移できない' do
+    it 'ログインしていないとユーザーは日記削除画面へ遷移できない' do
       
       # トップページに遷移する
       visit root_path
-      # レシピ1の詳細ページに遷移する
-      click_on(@recipe1.name)
-      visit recipe_path(@recipe1)
-      # レシピ1の詳細ページに"レシピの削除"のボタンがない
-      expect(page).to have_no_content ('レシピの削除')
+      # 日記一覧ページへのリンクがない
+      expect(page). to have_no_content('日記一覧')
+      
+    end
 
+    it 'ログインしても、投稿されている日記のユーザー以外は日記削除画面へ遷移できない' do
+      
+      # すでに投稿されている日記のユーザー以外のユーザーでログインする
+      log_in(@another_user)
+      # ニックネームの部分に、マウスを持ってくと"日記一覧"へ遷移するボタンがある
+      expect(
+        find(".user-nickname").hover
+      ).to have_content ('日記一覧')
+      # 日記一覧ページに移動する
+      visit diaries_path
+      # 日記一覧ページに、ログインユーザー以外の日記は存在しない
+      expect(page).to have_no_selector "img[src$='diary_test_image.jpg']"
+      
     end
 
   end
