@@ -129,9 +129,10 @@ RSpec.describe "ユーザー登録情報の編集機能", type: :system do
       
       # ログインする
       log_in(@user)
-      # ユーザーニックネームが表示されているボタンを押すとマイページへ遷移するボタンがある
-      click_link ('user')
-      expect(page).to have_content ('マイページ')
+      # ニックネームの部分に、マウスを持ってくと"マイページ"へ遷移するボタンがある
+      expect(
+        find(".user-nickname").hover
+      ).to have_content ('マイページ')
       # マイページに移動する
       visit user_path(@user)
       # マイページに"編集する"ボタンがある
@@ -161,9 +162,10 @@ RSpec.describe "ユーザー登録情報の編集機能", type: :system do
       
       # ログインする
       log_in(@user)
-      # ユーザーニックネームが表示されているボタンを押すとマイページへ遷移するボタンがある
-      click_link ('user')
-      expect(page).to have_content ('マイページ')
+      # ニックネームの部分に、マウスを持ってくと"マイページ"へ遷移するボタンがある
+      expect(
+        find(".user-nickname").hover
+      ).to have_content ('マイページ')
       # マイページに移動する
       visit user_path(@user)
       # マイページに"編集する"ボタンがある
