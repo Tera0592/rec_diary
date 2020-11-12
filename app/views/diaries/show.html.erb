@@ -22,7 +22,7 @@
             <%= link_to '編集', edit_diary_path(@diary.id), method: :get, class: "diary_list" %>
           </li>
           <li>
-            <%= link_to '削除', "#", method: :delete, class: "diary_list" %>
+            <%= link_to '削除', diary_path(@diary.id), method: :delete, class: "diary_list" %>
           </li>
         </ul>
       </span>
@@ -35,6 +35,11 @@
       </h3>
     </div>
     <%# 感想 %>
+    <%# 戻るボタン %>
+    <div class="diary-back">
+      <%= link_to '戻る', :back, class: "diary-back-btn" %>
+    </div>
+    <%# 戻るボタン %>
   </div>
 </div>
 <%= render "shared/footer" %>

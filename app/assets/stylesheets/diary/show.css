@@ -78,11 +78,34 @@
 
 /* 感想 */
 .diary-show-impression {
-  height: 40%;
+  height: 35%;
   text-align: center;
 }
 
 .show-impression {
   padding: 10%;
   color: gray;
+}
+
+/* 戻るボタン */
+.diary-back {
+  height: 5%;
+  padding: 3%;
+  text-align: center;
+}
+
+.diary-back-btn {
+  height: 40%;
+  width: 25%;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  font-size: 24px;
+  font-weight: bold;
+  color: gray;
+  text-align: center;
+  text-decoration: none;
+}
+
+.diary-back-btn:hover {
+  text-decoration: underline;
 }
