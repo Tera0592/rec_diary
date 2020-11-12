@@ -24,7 +24,7 @@
         <span class="preview"> <%= image_tag diary.image, size: '250x240' %> 
           <ul class="more_list">
             <li>
-              <%= link_to '詳細', "#", method: :get, class: "diary_list" %>
+              <%= link_to '詳細', diary_path(diary.id), method: :get, class: "diary_list" %>
             </li>
             <li>
               <%= link_to '編集', "#", method: :get, class: "diary_list" %>

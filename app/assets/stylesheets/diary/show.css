@@ -1,0 +1,88 @@
+.diary-show-contents {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.diary-show-box {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+}
+
+/* 日付とタイトル */
+.diary-show-title {
+  height: 20%;
+  text-align: left;
+  padding-left: 60px;
+}
+
+.show-main-date {
+  width: 100%;
+  height: 10%;
+  font-size: 50px;
+  color: gray;
+}
+
+.show-main-title {
+  width: 100%;
+  height: 10%;
+  font-size: 50px;
+  color: gray;
+}
+
+/* 写真 */
+.diary-show-image {
+  height: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.image-content {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.show-preview::after {
+  position: absolute;
+  content: '▼';
+  top: 6px;
+  right: 310px;
+}
+
+.show-preview:hover ul {
+  display: block;
+}
+
+.show_more_list {
+  position: absolute;
+  display: none;
+  text-align: center;
+  width: 80px;
+  top: 25px;
+  right: 243px;
+  font-size: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* 感想 */
+.diary-show-impression {
+  height: 40%;
+  text-align: center;
+}
+
+.show-impression {
+  padding: 10%;
+  color: gray;
+}
