@@ -227,9 +227,8 @@ RSpec.describe "レシピ編集", type: :system do
       }.to change { Recipe.count }.by(0)
       # トップページに遷移する
       expect(current_path).to eq root_path
-      # トップページには先ほど編集したレシピ(写真、料理名)が存在する
+      # トップページには先ほど編集したレシピが存在する
       expect(page).to have_selector "img[src$='another_recipe_test_image.jpg']"
-      expect(page).to have_content(@another_recipe.name)
 
     end
 
