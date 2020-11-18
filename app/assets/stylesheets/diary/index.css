@@ -82,7 +82,7 @@
 
 
 .diary-title {
-  width: 70%;
+  width: 68%;
   text-align: left;
 }
 
@@ -93,10 +93,48 @@
 }
 
 .diary-image {
-  width: 30%;
+  width: 32%;
+  height: 55%;
   margin-top: 30px;
   margin-right: 35px;
-  height: 55%;
+  z-index: 2;
+  position: relative;
+}
+
+.preview::after {
+  position: absolute;
+  content: '▼';
+  top: 2px;
+  left: 255px;
+}
+
+.preview:hover ul {
+  display: block;
+}
+
+.more_list {
+  position: absolute;
+  display: none;
+  text-align: center;
+  width: 80px;
+  top: 25px;
+  left: 250px;
+  font-size: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.diary_list {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.diary_list:hover {
+  background-color: #57C3E9;
+  color: #fff;
 }
 
 /* 日記がない場合の表示 */

@@ -1,4 +1,5 @@
 class DiariesController < ApplicationController
+  before_action :set_diary, only: [:show, :edit, :update, :destroy]
 
   def index
     @diary = Diary.includes(:user).order("time DESC")
@@ -17,7 +18,35 @@ class DiariesController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
+  def edit
+    
+  end
+
+  def update
+    if @diary.update(diary_params)
+      redirect_to diaries_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @diary.destroy
+      redirect_to diaries_path
+    else
+      render :show
+    end
+  end
+
   private
+
+  def set_diary
+    @diary = Diary.includes(:user).find(params[:id])
+  end
 
   def diary_params
     params.require(:diary).permit(:image, :time, :title, :impression).merge(user_id: current_user.id)

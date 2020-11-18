@@ -9,9 +9,6 @@ ja:
         password:              パスワード
         password_confirmation: 確認用パスワード
 
-    models:
-      recipe: レシピ
-    attributes:
       recipe:
         name:              料理名
         image:             料理の写真
@@ -21,9 +18,6 @@ ja:
         seasoning:         調味料
         procedure:         作り方
 
-    models:
-      diary: 日記
-    attributes:
       diary:
         time:              作った日時
         image:             日記の写真

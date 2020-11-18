@@ -1,0 +1,45 @@
+<%= render "shared/header" %>
+<div class="diary-show-contents">
+  <div class="diary-show-box">
+    <%# 日付とタイトル %>
+    <div class="diary-show-title">
+      <h3 class="show-main-date">
+        <%= @diary.time.year %> 年 <%= @diary.time.month %> 月 <%= @diary.time.day %> 日
+      </h3>
+      <h3 class="show-main-title">
+        <%= @diary.title %>
+      </h3>
+    </div>
+    <%# 日付とタイトル %>
+    <%# 写真 %>
+    <div class="diary-show-image">
+      <div class="image-content">
+        <%= image_tag @diary.image, size: '500x400' %> 
+      </div>
+      <span class="show-preview"> 
+        <ul class="show_more_list">
+          <li>
+            <%= link_to '編集', edit_diary_path(@diary.id), method: :get, class: "diary_list" %>
+          </li>
+          <li>
+            <%= link_to '削除', diary_path(@diary.id), method: :delete, class: "diary_list" %>
+          </li>
+        </ul>
+      </span>
+    </div>
+    <%# 写真 %>
+    <%# 感想 %>
+    <div class="diary-show-imapression">
+      <h3 class="show-impression">
+        <%= @diary.impression %>
+      </h3>
+    </div>
+    <%# 感想 %>
+    <%# 戻るボタン %>
+    <div class="diary-back">
+      <%= link_to '戻る', :back, class: "diary-back-btn" %>
+    </div>
+    <%# 戻るボタン %>
+  </div>
+</div>
+<%= render "shared/footer" %>

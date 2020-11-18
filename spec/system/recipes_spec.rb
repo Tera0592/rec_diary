@@ -40,11 +40,44 @@ RSpec.describe "レシピ投稿", type: :system do
 
     end
 
+    it 'ログインしたユーザーはマイページからレシピ投稿ができる' do
+      
+      # ログインする
+      log_in(@user)
+      # ニックネームの部分に、マウスを持ってくと"マイページ"へ遷移するボタンがある
+      expect(
+        find(".user-nickname").hover
+      ).to have_content ('マイページ')
+      # マイページへ遷移する
+      visit user_path(@user)
+      # マイページに"レシピを投稿する"のボタンがある
+      expect(page).to have_content ('レシピを投稿する')
+      # レシピ投稿ページに移動する
+      visit new_recipe_path
+      # フォームに情報を入力する
+      image_path = Rails.root.join('spec/fixtures/recipe/recipe_test_image.jpg')
+      attach_file('recipe[image]', image_path, make_visible: true)
+      fill_in 'recipe-name',       with: @recipe_name
+      select  '和食',              from: "recipe-genre"
+      fill_in 'recipe-food',       with: @recipe_food
+      fill_in 'recipe-seasoning',  with: @recipe_seasoning
+      fill_in 'recipe-procedure',  with: @recipe_procedure
+      # "レシピを投稿する"を押すとRecipeモデルのカウントが1上がる
+      expect{
+        find('input[name="commit"]').click
+      }.to change { Recipe.count }.by(1)
+      # トップページ(レシピ一覧表示ページ)に遷移する
+      expect(current_path).to eq root_path
+      # トップページには先ほど投稿したレシピが存在する
+      expect(page).to have_selector "img[src$='recipe_test_image.jpg']"
+
+    end
+
   end
 
   context "レシピが投稿できないとき" do
     
-    it 'ログインしていないとレシピ投稿ページができない' do
+    it 'ログインしていないとレシピ投稿ができない' do
       
       # トップページに遷移する
       visit root_path
@@ -194,9 +227,8 @@ RSpec.describe "レシピ編集", type: :system do
       }.to change { Recipe.count }.by(0)
       # トップページに遷移する
       expect(current_path).to eq root_path
-      # トップページには先ほど編集したレシピ(写真、料理名)が存在する
+      # トップページには先ほど編集したレシピが存在する
       expect(page).to have_selector "img[src$='another_recipe_test_image.jpg']"
-      expect(page).to have_content(@another_recipe.name)
 
     end
 
