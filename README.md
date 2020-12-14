@@ -37,6 +37,7 @@ https://recipe-diary-29368.herokuapp.com/
 ## トップページ (料理レシピ一覧表示画面)
 
 <img width="1417" alt="top-page-1" src="https://user-images.githubusercontent.com/69949838/102034380-392be700-3e01-11eb-9386-c330d57a3dd4.png">
+
 <img width="1436" alt="top-page-2" src="https://user-images.githubusercontent.com/69949838/102034441-58c30f80-3e01-11eb-9f3e-6b5d336320a2.png">
 
 このアプリのトップページです。アプリへのログインの有無に関わらず、自分や他のユーザーが投稿した料理レシピの一覧が見れます。また上部の検索欄からは料理レシピを検索が可能となっています。
@@ -65,26 +66,72 @@ https://recipe-diary-29368.herokuapp.com/
 ### マイページ画面
 
 #### No1
-<img width="1440" alt="my-page-1" src="https://user-images.githubusercontent.com/69949838/102035133-05ea5780-3e03-11eb-9927-626434a6abe0.png">
-<img width="1428" alt="my-page-2" src="https://user-images.githubusercontent.com/69949838/102047987-9a63b280-3e21-11eb-93e6-3aa0ddbac289.png">
+<img width="1429" alt="top-my-page" src="https://user-images.githubusercontent.com/69949838/102049577-79509100-3e24-11eb-83ca-0f257a45c581.png">
 
+#### No2
+<img width="1440" alt="my-page-1" src="https://user-images.githubusercontent.com/69949838/102035133-05ea5780-3e03-11eb-9927-626434a6abe0.png">
+
+<img width="1440" alt="my-page-2" src="https://user-images.githubusercontent.com/69949838/102049597-87061680-3e24-11eb-9052-743f137f685b.png">
+
+ログインしてる場合、トップページのニックネームが表示されている部分にマウスを動かすとメニューが下に開き、「マイページ」を押すと遷移します。
 登録しているユーザーのニックネーム、メールアドレスをこのマイページで確認ができます。必要なら、ニックネーム、メールアドレスを編集もできます。さらにユーザーが料理レシピを投稿をしてる場合、マイページにて確認もできます。
 
 ## 料理レシピ関連
 
 ### 投稿画面
 
+#### No1
+<img width="1435" alt="top-post-recipe" src="https://user-images.githubusercontent.com/69949838/102050007-5377bc00-3e25-11eb-9e51-230e4566cd02.png">
+
+#### No2
+<img width="1440" alt="recipe-post-1" src="https://user-images.githubusercontent.com/69949838/102035366-890bad80-3e03-11eb-8ac9-19038e72e770.png">
+
+<img width="1440" alt="recipe-post-2" src="https://user-images.githubusercontent.com/69949838/102035392-94f76f80-3e03-11eb-86b3-0a3491ad9569.png">
+
+ログインしてる場合、トップページのニックネームが表示されている部分にマウスを動かすとメニューが下に開き、「レシピを投稿する」を押すと遷移します。
+登録したい料理レシピの写真、ジャンル、材料、調味料、作り方を入力すると、投稿ができます。また入力内容に不備があった場合は、ユーザー新規登録画面同様、日本語のエラーメッセージが表示されます。
+
+
 ### 詳細表示・編集・削除画面
+
+#### No1
+<img width="1440" alt="recipe-show-1" src="https://user-images.githubusercontent.com/69949838/102035417-a5a7e580-3e03-11eb-975d-0e808c458b5e.png">
+
+<img width="1440" alt="recipe-show-2" src="https://user-images.githubusercontent.com/69949838/102035433-afc9e400-3e03-11eb-8c58-587387c0bc97.png">
+
+トップページのレシピ一覧から料理名をクリックすると、レシピ詳細画面に遷移します。レシピの投稿者が詳細画面に遷移した場合、同ページ内にて編集・削除が可能となっています。
+ユーザーがログインしていない、もしくは他ユーザーが投稿したレシピの詳細画面に遷移した場合、「レシピの編集」、「レシピの削除」は表示されない仕様となっています。
 
 ## 料理日記関連
 
 ### 一覧表示画面
 
+#### No1
+<img width="1423" alt="top-index-diary" src="https://user-images.githubusercontent.com/69949838/102051266-a5214600-3e27-11eb-88a6-2b2be60ef7da.png">
+
+#### No2
+<img width="1440" alt="diary-index" src="https://user-images.githubusercontent.com/69949838/102036151-72feec80-3e05-11eb-8056-73ee8891d104.png">
+
+ログインしてる場合、トップページのニックネームが表示されている部分にマウスを動かすとメニューが下に開き、「日記一覧」を押すと遷移します。
+ユーザーが日記投稿している場合、一覧画面に日記の日付、タイトルが表示されます。また写真の右横の「▼」部分に、マウスを動かすとメニューが下に開き、「詳細」、「編集」、「削除」が表示される仕様となっています。ユーザーがログインしていない、もしくは他ユーザーの日記は閲覧することは不可能となっていて、あくまで個人用の日記として活用ができます。
+
 ### 詳細表示・編集・削除画面
+
+#### No1
+<img width="1440" alt="diary-show-1" src="https://user-images.githubusercontent.com/69949838/102036229-a2155e00-3e05-11eb-9b5c-40f31784a505.png">
+
+<img width="1440" alt="diary-show-2" src="https://user-images.githubusercontent.com/69949838/102036256-ae99b680-3e05-11eb-9184-24c9b94f9262.png">
+
+日記一覧表示画面から、閲覧したい日記写真の右横の「▼」部分に、マウスを動かすとメニューが下に開き、「詳細」を押すと画面が遷移します。詳細画面には、写真、日付、タイトル、感想が表示されています。また一覧表示画面と同様、写真の右横の「▼」部分に、マウスを動かすとメニューが下に開き、「編集」、「削除」が表示される仕様となっています。
 
 ### 作成画面
 
+#### No1
+<img width="1440" alt="diary-write-1" src="https://user-images.githubusercontent.com/69949838/102036290-ca04c180-3e05-11eb-910b-b351d7c3dc1e.png">
 
+<img width="1440" alt="diary-write-2" src="https://user-images.githubusercontent.com/69949838/102036311-d557ed00-3e05-11eb-8daa-03fa8edb496a.png">
+
+日記を作成したい場合は、日記一覧表示画面から「日記を書く」をマウスで押すと、遷移します。登録したい料理日記の写真、日付、タイトル、感想、を入力すると、作成ができます。また入力内容に不備があった場合は、ユーザー新規登録画面同様、日本語のエラーメッセージが表示されます。
 
 # 工夫したポイント
 
