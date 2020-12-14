@@ -36,19 +36,39 @@ https://recipe-diary-29368.herokuapp.com/
 
 ## トップページ (料理レシピ一覧表示画面)
 
-No1
 <img width="1417" alt="top-page-1" src="https://user-images.githubusercontent.com/69949838/102034380-392be700-3e01-11eb-9386-c330d57a3dd4.png">
-No2
 <img width="1436" alt="top-page-2" src="https://user-images.githubusercontent.com/69949838/102034441-58c30f80-3e01-11eb-9f3e-6b5d336320a2.png">
 
+このアプリのトップページです。アプリへのログインの有無に関わらず、自分や他のユーザーが投稿した料理レシピの一覧が見れます。また上部の検索欄からは料理レシピを検索が可能となっています。
 
 ## ユーザー関連
 
 ### 新規登録画面
 
+#### No1
+<img width="1440" alt="sign-in" src="https://user-images.githubusercontent.com/69949838/102034888-73e24f00-3e02-11eb-82b9-96357461453c.png">
+
+ユーザーの新規登録画面です。こちらから、ニックネーム、メールアドレス、パスワードを設定してユーザー登録ができます。
+
+#### No2
+<img width="1440" alt="sign-in-error" src="https://user-images.githubusercontent.com/69949838/102034918-88264c00-3e02-11eb-8ad8-4da18f22c33b.png">
+
+ユーザー登録内容に不備があった場合は、日本語のエラーメッセージがでます。
+
 ### ログイン画面
 
+#### No1
+<img width="1432" alt="log-in" src="https://user-images.githubusercontent.com/69949838/102034959-9ffdd000-3e02-11eb-8183-14b4350b0d8c.png">
+
+登録した際のユーザーのメールアドレス、パスワードを入力して、ログインします。
+
 ### マイページ画面
+
+#### No1
+<img width="1440" alt="my-page-1" src="https://user-images.githubusercontent.com/69949838/102035133-05ea5780-3e03-11eb-9927-626434a6abe0.png">
+<img width="1428" alt="my-page-2" src="https://user-images.githubusercontent.com/69949838/102047987-9a63b280-3e21-11eb-93e6-3aa0ddbac289.png">
+
+登録しているユーザーのニックネーム、メールアドレスをこのマイページで確認ができます。必要なら、ニックネーム、メールアドレスを編集もできます。さらにユーザーが料理レシピを投稿をしてる場合、マイページにて確認もできます。
 
 ## 料理レシピ関連
 
