@@ -36,7 +36,13 @@ https://recipe-diary-29368.herokuapp.com/
 
 ## トップページ (料理レシピ一覧表示画面)
 
-## ユーザー管理機能
+No1
+<img width="1417" alt="top-page-1" src="https://user-images.githubusercontent.com/69949838/102034380-392be700-3e01-11eb-9386-c330d57a3dd4.png">
+No2
+<img width="1436" alt="top-page-2" src="https://user-images.githubusercontent.com/69949838/102034441-58c30f80-3e01-11eb-9f3e-6b5d336320a2.png">
+
+
+## ユーザー関連
 
 ### 新規登録画面
 
@@ -44,17 +50,17 @@ https://recipe-diary-29368.herokuapp.com/
 
 ### マイページ画面
 
-## 料理レシピ関連機能
+## 料理レシピ関連
 
 ### 投稿画面
 
-### 検索画面
-
 ### 詳細表示・編集・削除画面
 
-## 日記関連機能
+## 料理日記関連
 
-### 表示画面 (詳細表示・編集・削除)
+### 一覧表示画面
+
+### 詳細表示・編集・削除画面
 
 ### 作成画面
 
